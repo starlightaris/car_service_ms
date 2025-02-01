@@ -1,11 +1,15 @@
+
+<!DOCTYPE html>
 <html>
     <head>
+
+  
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="Validate(register).js"></script>
+        <script src="js/Validate(register).js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="style(register).css">
+        <link rel="stylesheet" type="text/css" href="css/style(register).css">
     </head>
     <body>
         <div class="container">
@@ -18,7 +22,7 @@
                     Please enter a valid email address.
                 </div>
                 
-                <form name="myform" onsubmit="return doValidate()" method="POST">
+                <form name="myform" onsubmit="return doValidate()" method="POST" action="php/register.php">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -41,7 +45,15 @@
                     </div>
                     <div class="row g-3">
                         <small id="emailError" class="error-text"> Please enter a valid email address.</small>
+                        <?php 
+                        include 'register.php';
+                        if (isset($error_message) ) {
+                            echo    ' <small id="emailError" class="error-text">'.$error_message.'</small>';
+                        }
+                    ?>
+                    
                     </div>
+            
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-group">
