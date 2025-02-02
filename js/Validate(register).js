@@ -45,7 +45,4 @@ function doValidate(){
     else{
         telError.style.display = "none";
         }
-  
-
-
     }
