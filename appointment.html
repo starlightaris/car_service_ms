@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Online Appointment</title>
+    <link rel="stylesheet" href="css/style(appointment).css">
+</head>
+<body>
+    <div class="container">
+        <h1>Make A Reservation</h1>
+        <form id="appointmentForm" name ="appointmentForm" onsubmit="return doValidate()" method="POST">
+            <div class="form-group">
+                <label for="vehicleNumber">Vehicle Number</label>
+                <input type="text" id="vehicleNumber" name="vehicleNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="vehicleType">Vehicle Type</label>
+                <select id="vehicleType" name="vehicleType" required>
+                    <option value="">Select Vehicle Type</option>
+                    <option value="car">Car</option>
+                    <option value="suv">SUV</option>
+                    <option value="truck">Truck</option>
+                    <option value="motorcycle">Motorcycle</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>           
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="serviceStation">Service Station</label>
+                <select id="serviceStation" name="serviceStation" required>
+                    <option value="">Choose Station</option>
+                    <option value="kottawa">Kottawa</option>
+                    <option value="koswatta">Koswatta</option>
+                    <option value="battaramulla">Battaramulla</option>                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Services</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="service" value="fullService"> Full Service
+                    <input type="checkbox" name="service" value="underCarriageWithoutTyre"> Under Carriage Service without Tyre Remove
+                    <input type="checkbox" name="service" value="oilFilterChange"> Oil & Filter Change
+                    <input type="checkbox" name="service" value="atfChange"> ATF change with sump packing
+                    <input type="checkbox" name="service" value="exteriorPolishWax"> Exterior cleaning - Polish & Wax
+                    <input type="checkbox" name="service" value="exteriorCutPolish"> Exterior cleaning - Cut & Polish
+                    <input type="checkbox" name="service" value="interiorCleaning"> Interior cleaning
+                    <input type="checkbox" name="service" value="leatherTreatment"> Leather treatment
+                    <input type="checkbox" name="service" value="totalTreatment"> Total treatment (Interior + Exterior cleaning)
+                    <input type="checkbox" name="service" value="gearOilChange"> Gear Oil change (Manual / Auto)
+                    <input type="checkbox" name="service" value="radiatorCoolantChange"> Radiator coolant change
+                    <input type="checkbox" name="service" value="sparkPlugsReplacement"> Spark plugs replacement
+                    <input type="checkbox" name="service" value="brakeCleaner"> Brake cleaner
+                    <input type="checkbox" name="service" value="brakeOilChange"> Brake oil change
+                    <input type="checkbox" name="service" value="brakePadChange"> Brake pad/shoe change
+                    <input type="checkbox" name="service" value="batteryTerminalCleaner"> Battery terminal cleaner & protection
+                    <input type="checkbox" name="service" value="headLampsCleaner"> Head lamps cleaner
+                    <input type="checkbox" name="service" value="wheelAlignment"> Wheel Alignment
+                    <input type="checkbox" name="service" value="clutchOilChange"> Clutch oil change
+                    <input type="checkbox" name="service" value="injectorCleaning"> Injector cleaning (Diesel/Petrol)
+                    <input type="checkbox" name="service" value="engineScanning"> Engine scanning
+                    <input type="checkbox" name="service" value="engineDegressing"> Engine degressing
+                    <input type="checkbox" name="service" value="dieselFilterChange"> Diesel filter change
+                    <input type="checkbox" name="service" value="hybridServices"> Hybrid Services
+                </div>
+            </div>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+    <script src="js/validate(appointment).js"></script>
+</body>
+</html>
