@@ -31,6 +31,21 @@ body {
     transition: border-color 0.3s ease;
     background: rgba(255, 255, 255, 0.3);
 }
+.error-text {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top: 2px;
+}
+
+
+.error-message{
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+    text-align: center;
+
+}
 
 .input-field:focus {
     border-color: #007bff;

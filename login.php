@@ -3,17 +3,18 @@
 include 'php/conf.php';
 session_start();
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['btnsubmit'])) {
 
-    $email = mysqli_real_escape_string($conn, $_POST['txtemail']);
-    $pass = mysqli_real_escape_string($conn, md5($_POST['txtpass']));
+    $email =$_POST['txtemail'];
+    $pass = $_POST['txtpass'];
 
-    $select = mysqli_query($conn, "SELECT * FROM user WHERE username = '$email' AND password = '$pass'") or die('query failed');
+    $select = mysqli_query($con, "SELECT * FROM user WHERE username = '$email' AND password = '$pass'") or die('query failed');
 
     if (mysqli_num_rows($select) > 0) {
         $row = mysqli_fetch_assoc($select);
-        $_SESSION['userId'] = $row[1];
-        header('location: home.php');
+        $_SESSION['userId'] = $row["username"];
+       
+       header('location:profile.php');
     } else {
         $message[] = 'Incorrect email or password!';
     }
@@ -39,7 +40,16 @@ if (isset($_POST['submit'])) {
         <div class="form mx-auto">
             <div class="top text-center mb-4">
                 <header class="h3">Login</header>
+              
             </div>
+
+            <?php
+                    if (isset($message)) {
+                        foreach ($message as $message) {
+                            echo '<div class="error-message">' .$message. '</div>';
+                        }
+                    }
+                    ?>
             <div id="alertBox1" class="alert alert-danger mt-2 d-none" role="alert">
                 Please enter a valid email address.
             </div>
@@ -48,19 +58,13 @@ if (isset($_POST['submit'])) {
                     <div class="col-12">
                         <div class="form-group">
                             <input type="email" name="txtemail" class="form-control input-field" placeholder="Email"
-                                required>
+                                required <?echo  isset($fname) ? $fname : ''; ?>
                         </div>
                     </div>
                 </div>
                 <div class="row g-3">
                     <small id="emailError" class="error-text"> Please enter a valid email address.</small>
-                    <?php
-                    if (isset($error_message)) {
-                        foreach ($error_message as $error_message) {
-                            echo '<div class="error-message">' . $error_message . '</div>';
-                        }
-                    }
-                    ?>
+                   
                 </div>
                 <div class="row g-3">
                     <div class="col-12">
@@ -72,10 +76,12 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="row g-3">
                     <small id="passwordError" class="error-text">Password must have at least 8 characters, 1 uppercase, 1 lowercase, 1 number, and 1 special character.</small>
+                    
                 </div>
                 <div class="row g-3">
                     <div class="col-12">
                         <div class="form-group">
+                  
                             <input type="submit" class="btn btn-primary w-100 submit" name="btnsubmit" value="Login">
                         </div>
                     </div>

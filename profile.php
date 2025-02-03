@@ -2,8 +2,9 @@
     include 'php/conf.php';
 
     session_start();
-    // $email = $_SESSION['txtemail'];
-    $user_email="binithi.vihanga@gmail.com";
+   
+    $user_email = $_SESSION['userId'];
+    // $user_email="binithi.vihanga@gmail.com";
 
     $sql="SELECT firstName,lastName,email,phone FROM customer INNER JOIN user ON customer.userId=user.userId WHERE username='$user_email'";
     $result = mysqli_query($con, $sql);
