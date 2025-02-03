@@ -15,7 +15,7 @@ function doValidate() {
     }
 
     // Validate Vehicle Type
-    if (vehicleType === "") {
+    if (vehicleType === "Select Vehicle Type") {
         alert("Please select a vehicle type.");
         return false;
     }
