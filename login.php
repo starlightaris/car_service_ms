@@ -77,7 +77,6 @@ if (isset($_POST['submit'])) {
                     <div class="col-12">
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary w-100 submit" name="btnsubmit" value="Login">
-                            <span class="psw">Forgot <a href="forgot.html">password?</a></span>
                         </div>
                     </div>
                 </div>
