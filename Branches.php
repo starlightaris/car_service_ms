@@ -12,18 +12,14 @@
     
 </head>
 <body class="bg-light">
+    <div id="header"></div>
+    <?php
+   include("header.php");
+   ?>
+
     <div class="hero-image">
         <div id="header"></div>
-        <!-- <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            fetch("header.html")
-              .then(response => response.text())
-              .then(data => {
-                document.getElementById("header").innerHTML = data;
-              })
-              .catch(error => console.error("Error loading header:", error));
-          });
-        </script> -->
+     
         
               <div class="hero-text">
                   <h1>Branches</h1>

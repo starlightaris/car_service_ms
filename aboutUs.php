@@ -11,20 +11,15 @@
     <link rel="stylesheet" type="text/css" href="css/style-header.css">
     <link rel="stylesheet" type="text/css" href="css/style-aboutUs.css">
 
+
 </head>
 <body>
     <div class="hero-image">
       <div id="header"></div>
-      <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-              document.getElementById("header").innerHTML = data;
-            })
-            .catch(error => console.error("Error loading header:", error));
-        });
-      </script> -->
+      <?php
+      include("header.php");
+      ?>
+
       
             <div class="hero-text">
             <h1>About Us</h1>

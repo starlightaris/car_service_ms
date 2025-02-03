@@ -59,6 +59,11 @@ header('location:login.php');
         <link rel="stylesheet" type="text/css" href="css/style-register.css">
     </head>
     <body>
+    <?php
+      include("header.php");
+      ?>
+   
+    
         <div class="container">
         
             <div class="form mx-auto"> 

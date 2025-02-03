@@ -1,18 +1,24 @@
-body {
-    
-    margin: 0;
+body, html {
+    height: 100%;
+    align-items: center;
     background-color: #f4f4f4;
     color: #333;
-  }
   
-  .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/offer.jpg");
+  
+  
+
+}
+
+
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/about3.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
   
 }
   
@@ -30,7 +36,7 @@ body {
   }
   
   .container {
-    padding: 40px 20px;
+    /* padding: 40px 20px; */
     text-align: center;
   }
   

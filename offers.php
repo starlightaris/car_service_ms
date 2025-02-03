@@ -13,16 +13,10 @@
 <body>
     <div class="hero-image">
       <div id="header"></div>
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-              document.getElementById("header").innerHTML = data;
-            })
-            .catch(error => console.error("Error loading header:", error));
-        });
-      </script>
+       <?php
+      include("header.php");
+      ?>
+   
       
         <div class="hero-text">
           <h1>Offers</h1>
@@ -32,7 +26,7 @@
      
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
-              <div class="card shadow h-100">
+              <div class="card  h-100">
                 <img src="images/offer1_old.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">First-Time Customer Discounts</h5>
@@ -50,7 +44,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card shadow h-100">
+              <div class="card  h-100">
                 <img src="images/xmas.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Christmas Special Offer</h5>
@@ -65,7 +59,7 @@
             <div class="col"> </div>
 
             <div class="col">
-              <div class="card shadow h-100 ">
+              <div class="card  h-100 ">
                 <img src="images/Tuesday+offers.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Tuesday Service Special</h5>

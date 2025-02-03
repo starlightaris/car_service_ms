@@ -14,7 +14,7 @@ if (isset($_POST['btnsubmit'])) {
         $row = mysqli_fetch_assoc($select);
         $_SESSION['userId'] = $row["username"];
        
-       header('location:profile.php');
+       header('location:offers.php');
     } else {
         $message[] = 'Incorrect email or password!';
     }
@@ -36,6 +36,9 @@ if (isset($_POST['btnsubmit'])) {
 </head>
 
 <body>
+<div id="header"></div>
+   
+   
     <div class="container">
         <div class="form mx-auto">
             <div class="top text-center mb-4">

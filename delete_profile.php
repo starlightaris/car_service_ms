@@ -1,13 +1,11 @@
 <?php
 
-include 'conf.php';
+include 'php/conf.php';
 
 session_start();
-// $email = $_SESSION['txtemail'];
-$user_email="shaini@gmail.com";
+$user_email = $_SESSION['userId'];
 
 
-if(isset($_POST['btndlt'])){
 
 
 
@@ -18,11 +16,14 @@ if(isset($_POST['btndlt'])){
 
     if ($result && $result2) {
         $message[] = 'Account deleted successfully.';
+        session_unset(); // Clear session
+        session_destroy(); // Destroy session
+        header("Location: register.php");
         
     } 
 
 
-}
+
 ?>
 
 <html>
@@ -31,20 +32,8 @@ if(isset($_POST['btndlt'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            function confirmDelete() {
-                var cofirm= confirm("Are you sure you want to delete your account?");
-
-                if(confirm){
-                    document.getElementById('dltform').submit(); 
-                }
-            }
-        </script>
-                
-            <script src="jquery-3.7.1.min.js"></script>
-        
-
-
+    <script src="jquery-3.7.1.min.js"></script>
+    
             <script>
             $(document).ready(function() {
                 setTimeout(() => {
@@ -57,7 +46,7 @@ if(isset($_POST['btndlt'])){
 
     </head>
     <body>
-        <form method="POST" id="dltform">
+        
         <?php 
                 if (isset($message) ) {
                 foreach($message as $message){
@@ -74,7 +63,7 @@ if(isset($_POST['btndlt'])){
                  }
                   ?>
 
-        <input type="submit" id="btndlt" name="btndlt" value="Delete Account" onclick=confirmDelete()>
-        </form>
+      
+       
     </body>
 </html>
