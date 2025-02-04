@@ -28,12 +28,14 @@
 
     <div class="hero-text">
       <h1>Offers</h1>
+      "Explore our exclusive offers and discounts tailored to provide the best value for our services. Don't miss out on limited-time deals!"
+    </div>
     </div>
   </div>
 
   <div class="container">
     <!--cards-->
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 mb-4 g-4">
       <div class="col">
         <div class="card  h-100">
           <img src="images/offer1_old.jpg" class="card-img-top" alt="first time customer discount">

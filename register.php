@@ -62,18 +62,24 @@ if (isset($_POST['submit'])) {
     <script src="js/Validate-register.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-register.css">
+    <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
+
 </head>
 
 <body>
 
-
-
+      
+       <!--header-->
+  <div id="header"></div>
+    <?php
+    include("header.php");
+    ?>
 
     <div class="container">
         <!--back arrow-->
-        <a href="javascript:history.back()" class="back-arrow">
+        <!-- <a href="javascript:history.back()" class="back-arrow">
             &larr;
-        </a>
+        </a> -->
 
         <div class="form mx-auto">
             <div class="top text-center mb-4">
@@ -165,14 +171,13 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
     </div>
+       <!-- nav-scroll frosted glass effect -->
+       <script src="js/navbar-scroll.js"></script>
 
-    <!-- nav-scroll frosted glass effect -->
-    <script src="js/navbar-scroll.js"></script>
-
-    <!-- Footer -->
-    <div id="footer">
-        <?php include("footer.php"); ?>
-    </div>
+        <!-- Footer -->
+        <div id="footer">
+            <?php include("footer.php"); ?>
+        </div>
 
 </body>
 

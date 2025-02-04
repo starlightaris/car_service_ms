@@ -41,16 +41,23 @@ if (isset($_POST['btnsubmit'])) {
     <script src="js/validate-login.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-login.css">
+    <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
+
 </head>
 
 <body>
-    <div id="header"></div>
+   
+       <!--header-->
+       <div id="header"></div>
+            <?php
+            include("header.php");
+            ?>
 
     <div class="container">
         <!--back arrow-->
-        <a href="javascript:history.back()" class="back-arrow">
+        <!-- <a href="javascript:window.history.back()" class="back-arrow">
             &larr;
-        </a>
+        </a> -->
         <div class="form mx-auto">
             <div class="top text-center mb-4">
                 <header class="h3">Login</header>
@@ -107,15 +114,14 @@ if (isset($_POST['btnsubmit'])) {
             </form>
         </div>
     </div>
-
-    <!-- nav-scroll frosted glass effect -->
-    <script src="js/navbar-scroll.js"></script>
+   <!-- nav-scroll frosted glass effect -->
+   <script src="js/navbar-scroll.js"></script>
 
     <!-- Footer -->
     <div id="footer">
         <?php include("footer.php"); ?>
     </div>
-
+   
 </body>
 
 </html>

@@ -28,6 +28,7 @@
 
         <div class="hero-text">
             <h1>Branches</h1>
+            "Find our branches conveniently located in various areas. Visit us to experience our services firsthand and speak with our friendly staff."
         </div>
     </div>
 

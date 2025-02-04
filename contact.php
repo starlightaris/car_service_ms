@@ -65,6 +65,7 @@ if (isset($_POST['submit'])) {
 
         <div class="hero-text">
             <h1>Contact Us</h1>
+            "Have a question or need assistance? Get in touch with us through our contact form, email, or phone. We're here to help!"
         </div>
     </div>
 

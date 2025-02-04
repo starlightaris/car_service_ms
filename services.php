@@ -24,6 +24,7 @@
         </div>
         <div class="hero-text">
             <h1>Services</h1>
+            "Discover a wide range of services designed to meet your needs. From professional consultations to quality product offerings, we have you covered."
         </div>
     </div>
 

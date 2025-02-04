@@ -50,6 +50,7 @@
 
     .why-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 196px;
     }
 
     .why-card:hover {
@@ -105,6 +106,10 @@
 
     /* .blog-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 165px;
+    }
+    .blog-card card-body{
+      min-height: 165px;
     }
   
     .blog-card:hover {

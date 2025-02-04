@@ -30,7 +30,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
       </div>
       <!--sidebar body-->
       <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 w-100 mt-1">
-        <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3" style="font-size:17px">
           <li class="nav-item">
             <a class="nav-link <?php echo ($currentPage == 'index.php') ? 'active' : ''; ?>" aria-current="page" href="index.php">Home</a>
           </li>
@@ -50,17 +50,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
             <a class="nav-link <?php echo ($currentPage == 'branches.php') ? 'active' : ''; ?>" href="branches.php">Branches</a>
           </li>
 
-          <div class="d-flex flex-column align-items-center">
-          <?php
-            if (isset($_SESSION['userId'])) {
-              echo '<a href="appointment.php" class="text-white text-decoration-none px-4 py-2 bg-primary rounded-2 w-100 w-md-auto" style="background-color:blue;">Book Now</a>';
-            }
-            else{
-              echo '<a href="login.php" class="text-white text-decoration-none px-4 py-2 bg-primary rounded-2" style="background-color:blue;">Book Now</a>';
-            }
-            ?>
-        
-          </div>
+     
           <div class="d-flex align-items-center ms-auto">
             <?php
             if (isset($_SESSION['userId'])) {
@@ -95,9 +85,17 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
               </li>
             <?php } else { ?>
               <!-- Login / Sign Up -->
-              <div class="d-flex justify-content-center gap-2 mt-2">
-                <a href="login.php" class="text-white">Login</a>
-                <a href="register.php" class="text-white text-decoration-none px-2 py-2 rounded-2 bg-danger register-btn" style="background-color:red;">Register</a>
+              <div class="d-flex justify-content-end align-items-baseline ms-auto gap-3">
+                <a href="login.php" class="text-white" style="font-size:15px;">Login</a>
+                
+                <?php
+            if (isset($_SESSION['userId'])) {
+              echo '<a href="appointment.php" class="text-white text-decoration-none px-3 py-2 rounded-2 bg-danger " style="background-color:red;font-size:15px;">Book Now</a>';
+            }
+            else{
+              echo '<a href="appointment.php" class="text-white text-decoration-none px-3 py-2 rounded-2 bg-danger " style="background-color:red;font-size:15px;">Book Now</a>';
+            }
+            ?>
               </div>
             <?php } ?>
           </div>
@@ -105,11 +103,13 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
     </div>
   </div>
 </nav>
-
+<!-- 
 <script>
   window.addEventListener('scroll', () => {
     navEl.classList.toggle('navbar-scrolled', window.scrollY >= 30);
+  }); -->
+<!-- </script>
   });
-</script>
+</script> -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
