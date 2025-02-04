@@ -20,6 +20,14 @@
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease, padding 0.3s ease;
 }
+.navbar-brand{
+  margin-right: 150px;
+}
+/* .offcanvas-body ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+} */
 
 /* Apply the frosted effect only if backdrop-filter is supported. (Edge failed, Chrome works) */
 @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
