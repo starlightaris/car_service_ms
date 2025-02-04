@@ -47,16 +47,16 @@
         <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold">Our Services</h6>
-          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" /><br>
           <label>
             <a href="#!" class="text-white">Engine Repairs</a>
-          </label>
+          </label><br>
           <label>
             <a href="#!" class="text-white">Brake Servicing</a>
-          </label>
+          </label><br>
           <label>
             <a href="#!" class="text-white">Oil Changes</a>
-          </label>
+          </label><br>
           <label>
             <a href="#!" class="text-white">Car Diagnostics</a>
           </label>
@@ -66,7 +66,7 @@
         <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold">Useful Links</h6>
-          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" /><br>
           <label>
             <?php
             // Check if the user is logged in
@@ -76,13 +76,13 @@
               echo '<a href="login.php" class="text-white">Book an Appointment</a>';
             }
             ?>
-          </label>
+          </label><br>
           <label>
             <a href="services.php" class="text-white">Service Packages</a>
-          </label>
+          </label><br>
           <label>
             <a href="Branches.php" class="text-white">Branches</a>
-          </label>
+          </label><br>
           <label>
             <a href="contact.php" class="text-white">Customer Reviews</a>
           </label>
@@ -92,10 +92,10 @@
         <div class="col-md-6 col-lg-4 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold">Contact</h6>
-          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-          <label><i class="fas fa-home mr-3"></i> Battaramulla, Sri Lanka</l>
-          <label><i class="fas fa-envelope mr-3"></i> <a href="mailto:info@kavindaauto.com" class="text-white">info@kavindaauto.com</a></label>
-          <label><i class="fas fa-phone mr-3"></i> <a href="tel:+94112345678" class="text-white">+94 112 345 678</a></label>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" /><br>
+          <label><i class="fas fa-home mr-3"></i> Battaramulla, Sri Lanka</label><br>
+          <label><i class="fas fa-envelope mr-3"></i> <a href="mailto:info@kavindaauto.com" class="text-white">info@kavindaauto.com</a></label><br>
+          <label><i class="fas fa-phone mr-3"></i> <a href="tel:+94112345678" class="text-white">+94 112 345 678</a></label><br>
           <label><i class="fas fa-print mr-3"></i> <a href="tel:+94112345679" class="text-white">+94 112 345 679</a></label>
         </div>
       </div>
