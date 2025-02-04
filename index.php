@@ -141,44 +141,6 @@
     </div>
   </section>
 
-
-  <!-- <div class="container">
-      <h2 class="text-center mb-5">What We Offer</h2>
-      <div class="row">
-        <div class="col-md-4 text-center">
-          <div class="card service-card shadow-sm">
-            <div class="card-body">
-              <i class="fas fa-car fa-3x mb-3"></i>
-              <h4>Engine Repairs</h4>
-              <p>Expert engine diagnostics and repairs to keep your vehicle running smoothly.</p>
-              <a href="services.php" class="btn btn-outline-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 text-center">
-          <div class="card service-card shadow-sm">
-            <div class="card-body">
-              <i class="fas fa-tools fa-3x mb-3"></i>
-              <h4>Brake Servicing</h4>
-              <p>Ensure your safety with our professional brake inspection and servicing.</p>
-              <a href="services.php" class="btn btn-outline-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 text-center">
-          <div class="card service-card shadow-sm">
-            <div class="card-body">
-              <i class="fas fa-oil-can fa-3x mb-3"></i>
-              <h4>Oil Changes</h4>
-              <p>Regular oil changes to keep your engine in top condition.</p>
-              <a href="services.php" class="btn btn-outline-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-
   <!-- Testimonials -->
   <section class="testimonials py-5" style="background-color: #f8f9fa;">
     <div class="container">
@@ -246,7 +208,6 @@
     </div>
   </section>
 
-
   <!-- Blog -->
   <section class="blog-section py-5">
     <h2 class="text-center mb-5">Car Care Tips</h2>
@@ -284,45 +245,9 @@
     </div>
   </section>
 
-  <!-- <div class="container">
-      <h2 class="text-center mb-5">Car Care Tips</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card blog-card shadow-sm">
-            <img src="images/car-maintenance-tips.jpg" class="card-img-top" alt="Car Maintenance Tips">
-            <div class="card-body">
-              <h5 class="card-title">5 Tips for Maintaining Your Car</h5>
-              <p class="card-text">Learn how to keep your car in top condition with these simple tips.</p>
-              <a href="#" class="btn btn-outline-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card shadow-sm">
-            <img src="images/winter-car-care.jpg" class="card-img-top" alt="Winter Car Care">
-            <div class="card-body">
-              <h5 class="card-title">Preparing Your Car for Winter</h5>
-              <p class="card-text">Get your car ready for the cold season with these essential tips.</p>
-              <a href="#" class="btn btn-outline-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card shadow-sm">
-            <img src="images/fuel-efficiency.jpg" class="card-img-top" alt="Fuel Efficiency">
-            <div class="card-body">
-              <h5 class="card-title">How to Improve Fuel Efficiency</h5>
-              <p class="card-text">Save money on fuel with these easy-to-follow tips.</p>
-              <a href="#" class="btn btn-outline-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <!-- nav-scroll frosted glass effect -->
   <script src="js/navbar-scroll.js"></script>
+
   <!-- Footer -->
   <div id="footer">
     <?php include("footer.php"); ?>
