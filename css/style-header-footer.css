@@ -1,286 +1,277 @@
 /* Header */
 .navbar-toggler {
-    margin-left: auto !important;
-    position: relative;
-    top: 0;
+  margin-left: auto; /* Moves the hamburger menu to the right */
+  position: relative;
+  top: 0;
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    z-index: 1000;
-    /* Ensures it stays on top */
-    padding: 20px 0;
-    justify-content: space-between;
-
-    /*Frosted Glass effect*/
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    transition: background-color 0.3s ease, padding 0.3s ease;
-}
-
-.navbar-brand {
-    margin-right: 90px;
-}
-
-/* .offcanvas-body ul {
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+
+  z-index: 1000; /* Ensures it stays on top */
+  padding: 20px 0; 
+  justify-content: space-between;
+
+  /*Frosted Glass effect*/
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+.navbar-brand{
+margin-right: 90px;
+}
+/* .offcanvas-body ul {
+display: flex;
+justify-content: center;
+width: 100%;
 } */
 
 /* Sidebar (Offcanvas Menu) */
 .sidebar {
-    width: 250px;
-    /* Ensures sidebar takes proper width */
-    max-width: 100%;
-    height: 100vh;
-    /* Full viewport height */
-    background-color: rgba(255, 255, 255, 0.15);
-    /* Semi-transparent */
-    backdrop-filter: blur(10px);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  width: 250px;
+  /* Ensures sidebar takes proper width */
+  max-width: 100%;
+  height: 100vh;
+  /* Full viewport height */
+  background-color: rgba(255, 255, 255, 0.15);
+  /* Semi-transparent */
+  /* backdrop-filter: blur(10px); */
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 /* Ensure Offcanvas Opens Properly */
-.offcanvas {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 100vh !important;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Dark transparent background */
-    backdrop-filter: blur(10px);
-}
 
 .offcanvas-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Centers items horizontally */
-    justify-content: center;
-    /* Centers items vertically */
-    text-align: center;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centers items horizontally */
+  justify-content: center;
+  /* Centers items vertically */
+  text-align: center;
+  padding-top: 20px;
+}
+.offcanvas {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Dark transparent background */
+  /* backdrop-filter: blur(10px); */
 }
 
 /* Apply the frosted effect only if backdrop-filter is supported. (Edge failed, Chrome works) */
 @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
-    .navbar {
-        background-color: rgba(0, 0, 0, 0.3);
-        /* Semi-transparent black */
-    }
+  .navbar {
+      background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+  }
 }
 
 
 .navbar-scrolled {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-    padding: 10px 0;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0,0,0,0.6) !important; 
+  padding: 10px 0;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
 }
-
 @media (max-width: 991px) {
-    .offcanvas-body ul.navbar-nav {
-        align-items: center;
-        /* Center all items */
-        text-align: center;
-        width: 100%;
-    }
-
-    .offcanvas-body .nav-item {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        /* Move items more to the center */
-    }
-
-    .navbar {
-        display: flex;
-        align-items: center; /* Ensures items are vertically aligned */
-        padding: 15px 20px;
-    }
-
-    .navbar-brand {
-        margin-right: auto;
-        /* Align logo to the left */
-        font-size: 1.2rem;
-        /* Adjust logo size */
-    }
-
-    .navbar-toggler {
-        position: absolute;
-        right: 15px; /* Ensures consistent positioning */
-        top: 15px;
-    }
-
-    .offcanvas-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-    }
-
-    /* Offcanvas Sidebar */
-    .sidebar {
-        background-color: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-    }
-
-    .sidebar .btn,
-    .sidebar a {
-        display: block;
-        width: 80%;
-        max-width: 250px;
-        text-align: center;
-        margin: 2px auto;
-        /* Centers them */
-        white-space: nowrap;
-        padding: 5px 0;
-        line-height: 1;
-    }
-
-    .sidebar .btn {
-        width: 100%;
-        /* Match link width */
-        max-width: 250px;
-        /* Same as links */
-        display: block;
-        /* Ensure buttons align with links */
-    }
-
-    .sidebar .d-flex {
-        flex-direction: column;
-        /* Stack items vertically */
-        align-items: center;
-        /* Center align the buttons */
-        justify-content: center;
-        width: 100%;
-        /* Ensure full width */
-        margin-top: 20px;
-    }
-
-    .sidebar .d-flex a {
-        display: block;
-        width: 100%;
-        max-width: 250px;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .sidebar .d-flex.justify-content-center {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        /* Space from other nav items */
-    }
-
-    /* Make Navbar items center-aligned */
-    .navbar-nav {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        /* Adds spacing between items */
-        margin-bottom: 30px;
-    }
-
-    .nav-item {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-link {
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-
-    .navbar-nav:last-child {
-        margin-bottom: 50px;
-        /* Push buttons down */
-    }
-    .navbar .d-flex.justify-content-center {
-        align-items: center; /* Ensures Login and Register align properly */
-    }
-
-    .navbar .register-btn {
-        padding: 6px 12px; /* Adjust padding to match other nav items */
-        height: auto; /* Ensures consistent height */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        line-height: normal;
-    }
+  .offcanvas-body ul.navbar-nav {
+    align-items: center;
+    /* Center all items */
+    text-align: center;
+    width: 100%;
 }
+
+.offcanvas-body .nav-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Move items more to the center */
+}
+.navbar {
+  display: flex;
+  align-items: center; /* Ensures items are vertically aligned */
+  padding: 15px 20px;
+}
+
+.navbar-brand {
+    margin-right: auto; /* Align logo to the left */
+    font-size: 1.2rem; /* Adjust logo size */
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 15px; /* Ensures consistent positioning */
+  top: 15px;
+}
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Offcanvas Sidebar */
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+.sidebar .btn,
+.sidebar a {
+    display: block;
+    width: 80%;
+    max-width: 250px;
+    text-align: center;
+    margin: 2px auto;
+    /* Centers them */
+    white-space: nowrap;
+    padding: 5px 0;
+    line-height: 1;
+}
+.sidebar .btn {
+  width: 100%;
+  /* Match link width */
+  max-width: 250px;
+  /* Same as links */
+  display: block;
+  /* Ensure buttons align with links */
+}
+
+.sidebar .d-flex {
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: center;
+  /* Center align the buttons */
+  justify-content: center;
+  width: 100%;
+  /* Ensure full width */
+  margin-top: 20px;
+}
+
+.sidebar .d-flex a {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sidebar .d-flex.justify-content-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  /* Space from other nav items */
+}
+
+
+
+/* Make Navbar items center-aligned */
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  /* Adds spacing between items */
+  margin-bottom: 30px;
+}
+.nav-item {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-nav:last-child {
+  margin-bottom: 50px;
+  /* Push buttons down */
+}
+.navbar .d-flex.justify-content-center {
+  align-items: center; /* Ensures Login and Register align properly */
+}
+
+.navbar .register-btn {
+  padding: 6px 12px; /* Adjust padding to match other nav items */
+  height: auto; /* Ensures consistent height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+}
+
 
 /* Extra Small Screens (max-width: 576px) */
 @media (max-width: 576px) {
-    .navbar {
-        padding: 10px;
-        /* Reduce padding for extra small screens */
-    }
+.navbar {
+    padding: 10px; /* Reduce padding for extra small screens */
+}
 
-    .navbar-brand {
-        font-size: 1rem;
-    }
+.navbar-brand {
+    font-size: 1rem;
+}
 
-    .navbar-toggler {
-        font-size: 0.9rem;
-        /* Reduce hamburger size */
-    }
+.navbar-toggler {
+    font-size: 0.9rem; /* Reduce hamburger size */
+}
+
+
 }
 
 @media (max-width: 991px) {
 
-    .navbar-brand {
-        margin-top: 0;
-        text-align: left;
-    }
+  .navbar-brand {
+      margin-top: 0; 
+      text-align: left; 
+  }
 
-    .navbar-toggler {
-        margin-left: auto;
-        text-align: right;
-        margin-top: 0;
-    }
+  .navbar-toggler {
+      margin-left: auto; 
+      text-align: right; 
+      margin-top: 0;
+  }
 
-    .navbar {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .navbar {
+      flex-direction: row; 
+      justify-content: space-between; 
+      align-items: center;
+  }
 
-    .sidebar {
-        background-color: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-    }
+  .sidebar {
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px); 
+  }
 }
+
 
 
 /* Footer */
 @media (max-width: 768px) {
-    .footer .col-md-6 {
-        margin-bottom: 1.5rem;
-    }
+  .footer .col-md-6 {
+      margin-bottom: 1.5rem;
+  }
 
-    .footer h6 {
-        font-size: 1.1rem;
-    }
+  .footer h6 {
+      font-size: 1.1rem;
+  }
 
-    .footer label {
-        font-size: 0.9rem;
-    }
+  .footer label {
+      font-size: 0.9rem;
+  }
 
-    .footer .social-media-icons {
-        justify-content: center;
-    }
+  .footer .social-media-icons {
+      justify-content: center;
+  }
 
-    .footer .social-media-icons a {
-        margin: 0 0.5rem;
-    }
+  .footer .social-media-icons a {
+      margin: 0 0.5rem;
+  }
 }

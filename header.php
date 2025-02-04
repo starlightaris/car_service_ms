@@ -30,7 +30,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
       </div>
       <!--sidebar body-->
       <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 w-100 mt-1">
-        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3" style="font-size:17px">
+        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 " style="font-size:17px; background-color:transparent;">
           <li class="nav-item">
             <a class="nav-link <?php echo ($currentPage == 'index.php') ? 'active' : ''; ?>" aria-current="page" href="index.php">Home</a>
           </li>
@@ -103,13 +103,13 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
     </div>
   </div>
 </nav>
-<!-- 
-<script>
+
+<!-- <script>
   window.addEventListener('scroll', () => {
     navEl.classList.toggle('navbar-scrolled', window.scrollY >= 30);
-  }); -->
-<!-- </script>
   });
-</script> -->
+
+  });
+</script>  -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

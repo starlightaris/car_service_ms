@@ -51,7 +51,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="images/brake-hero.jpg" class="d-block w-100" alt="Brake Pads Service">
+        <img src="images/brake-hero.jpg" class="d-block w-100"  alt="Brake Pads Service">
         <div class="carousel-caption">
           <h3>Brake Service</h3>
           <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
