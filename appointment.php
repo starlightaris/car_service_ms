@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
     <!-- Custome CSS -->
     <link rel="stylesheet" href="css/style-appointment.css">
     <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
-    <link rel="stylesheet" type="text/css" href="css/style-offer.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style-offer.css"> -->
 </head>
 
 

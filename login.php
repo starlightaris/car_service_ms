@@ -42,6 +42,8 @@ if (isset($_POST['btnsubmit'])) {
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-login.css">
     <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
+    <!-- Font Awesome for Social Media icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 
