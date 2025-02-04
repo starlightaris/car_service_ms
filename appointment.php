@@ -1,5 +1,33 @@
+<?php
+include 'php/conf.php';
+$error_message = [];
+if (isset($_POST['submit'])) {
+    $vehicleNumber = $_POST['vehicleNumber'];
+    $vehicleType = $_POST['vehicleType'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $serviceStation = $_POST['serviceStation'];
+    $service = $_POST['service'];
+
+    $sql = "INSERT INTO appointments (vehicle_number, vehicle_type, date, time, service_station, services)
+                  VALUES ('$vehicleNumber', '$vehicleType', '$date', '$time', '$serviceStation', '$service')";
+
+    if (mysqli_query($con, $query)) {
+        echo "<script>alert('Appointment booked successfully!');</script>";
+    } else {
+        $errors[] = "Error: " . mysqli_error($con);
+    }
+    if (!empty($errors)) {
+        foreach ($errors as $error) {
+            echo "<script>alert('$error');</script>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Kavinda Auto Engineering</title>
     <meta charset="UTF-8">
@@ -9,10 +37,11 @@
     <title>Online Appointment</title>
     <link rel="stylesheet" href="css/style-appointment.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Make A Reservation</h1>
-        <form id="appointmentForm" name ="appointmentForm" onsubmit="return doValidate()" method="POST">
+        <form id="appointmentForm" name="appointmentForm" onsubmit="return doValidate()" method="POST">
             <div class="form-group">
                 <label>Vehicle Number</label>
                 <input type="text" id="txtboxes" name="vehicleNumber" placeholder="ABC-1234" required>
@@ -30,7 +59,7 @@
             <div class="form-group">
                 <label>Date</label>
                 <input type="date" id="txtboxes" name="date" required>
-            </div>           
+            </div>
             <div class="form-group">
                 <label for="time">Time</label>
                 <input type="time" id="txtboxes" name="time" required>
@@ -41,19 +70,23 @@
                     <option value="">Choose Station</option>
                     <option value="kottawa">Kottawa</option>
                     <option value="koswatta">Koswatta</option>
-                    <option value="battaramulla">Battaramulla</option>                    
+                    <option value="battaramulla">Battaramulla</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Select Services</label>
                 <div class="checkbox-group">
                     <input type="checkbox" name="service" id="service" value="fullService"> Full Service<br>
-                    <input type="checkbox" name="service" id="service" value="underCarriageWithoutTyre"> Under Carriage Service without Tyre Remove<br>
+                    <input type="checkbox" name="service" id="service" value="underCarriageWithoutTyre"> Under Carriage
+                    Service without Tyre Remove<br>
                     <input type="checkbox" name="service" id="service" value="oilFilterChange"> Oil & Filter Change<br>
-                    <input type="checkbox" name="service" id="service" value="exteriorCutPolish"> Exterior cleaning - Cut & Polish<br>
+                    <input type="checkbox" name="service" id="service" value="exteriorCutPolish"> Exterior cleaning -
+                    Cut & Polish<br>
                     <input type="checkbox" name="service" id="service" value="interiorCleaning"> Interior cleaning<br>
-                    <input type="checkbox" name="service" id="service" value="totalTreatment"> Total treatment (Interior + Exterior cleaning)<br>
-                    <input type="checkbox" name="service" id="service" value="radiatorCoolantChange"> Radiator coolant change<br>
+                    <input type="checkbox" name="service" id="service" value="totalTreatment"> Total treatment (Interior
+                    + Exterior cleaning)<br>
+                    <input type="checkbox" name="service" id="service" value="radiatorCoolantChange"> Radiator coolant
+                    change<br>
                     <input type="checkbox" name="service" id="service" value="brakeCleaner"> Brake cleaner<br>
                     <input type="checkbox" name="service" id="service" value="brakeOilChange"> Brake oil change<br>
                     <input type="checkbox" name="service" id="service" value="headLampsCleaner"> Head lamps cleaner<br>
@@ -64,6 +97,8 @@
             <button type="submit">Book Appointment</button>
         </form>
     </div>
+
     <script src="js/validate(appointment).js"></script>
 </body>
+
 </html>

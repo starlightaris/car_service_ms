@@ -1,61 +1,114 @@
+    /* Carousel */
+    .full-screen-carousel {
+      height: 100vh;
+      overflow: hidden;
+    }
 
-/* Header */
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-  }
+    .full-screen-carousel .carousel-inner,
+    .full-screen-carousel .carousel-item,
+    .full-screen-carousel img {
+      height: 100%;
+      width: 100%;
+      /* filter: brightness(0.8); */
+      object-fit: cover;
+    }
+
+    /* Responsive captions */
+    .carousel-caption {
+      bottom: 20%;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .carousel-caption h3 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .carousel-caption p {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-caption {
+        bottom: 10%;
+        padding: 10px;
+      }
+
+      .carousel-caption h3 {
+        font-size: 1.5rem;
+      }
+
+      .carousel-caption p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Hover effects */
+
+    .why-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   
-  .navbar-brand {
-    font-weight: bold;
-  }
+    .why-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
   
-  /* Carousel */
-  .carousel-inner > .item > img {
-    width: 100%;
-    height: auto;
-  }
+    .icon-hover {
+      transition: transform 0.3s ease;
+    }
   
-  /* Services Section */
-  #services {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-  }
+    .icon-hover:hover {
+      transform: scale(1.2);
+    }
+
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   
-  #services h2 {
-    margin-bottom: 40px;
-  }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial-card {
+      max-width: 600px;
+      margin: 0 auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   
-  #services p {
-    margin-bottom: 40px;
-  }
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   
-  /* About Us Section */
-  #about {
-    padding: 60px 0;
-  }
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-button {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   
-  #about h2 {
-    margin-bottom: 40px;
-  }
+    .contact-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .blog-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   
-  /* Contact Section */
-  #contact {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-  }
-  
-  #contact h2 {
-    margin-bottom: 40px;
-  }
-  
-  #contact form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #333;
-    color: #fff;
-    /* padding: 20px 0; */
-  }
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+

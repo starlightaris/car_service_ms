@@ -1,6 +1,5 @@
 <?php
 
-
 include 'php/conf.php';
 $error_message = [];
 if(isset($_POST['submit'])){

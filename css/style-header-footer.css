@@ -1,0 +1,84 @@
+/* Header */
+.navbar-toggler {
+    margin-left: auto; /* Moves the hamburger menu to the right */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays on top */
+    padding: 20px 0; 
+    /* background-color: transparent !important;
+    background: rgba(0, 0, 0, 0.5);*/
+    justify-content: space-between;
+
+    /*Frosted Glass effect*/
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Apply the frosted effect only if backdrop-filter is supported. (Edge failed, Chrome works) */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+    }
+}
+
+
+.navbar-scrolled {
+    background-color: rgba(0,0,0,0.6) !important; 
+    padding: 10px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 991px) {
+ 
+    .navbar-brand {
+        margin-top: 0; 
+        text-align: left; 
+    }
+
+    .navbar-toggler {
+        margin-left: auto; 
+        text-align: right; 
+        margin-top: 0;
+    }
+
+    .navbar {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    .sidebar {
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px); 
+    }
+}
+
+
+/* Footer */
+@media (max-width: 768px) {
+    .footer .col-md-6 {
+      margin-bottom: 1.5rem; 
+    }
+  
+    .footer h6 {
+      font-size: 1.1rem;
+    }
+  
+    .footer p {
+      font-size: 0.9rem;
+    }
+  
+    .footer .social-media-icons {
+      justify-content: center;
+    }
+  
+    .footer .social-media-icons a {
+      margin: 0 0.5rem;
+    }
+  }
