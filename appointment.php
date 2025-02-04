@@ -41,16 +41,22 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custome CSS -->
     <link rel="stylesheet" href="css/style-appointment.css">
+    <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
+    <link rel="stylesheet" type="text/css" href="css/style-offer.css">
 </head>
 
-<body>
-    <div id="header">
-        <?php include("header.php"); ?>
-    </div>
 
-    <div class="container">
-        <h1>Make A Reservation</h1>
+
+<body>
+<div id="header"></div>
+    <?php
+    include("header.php");
+    ?>
+
+   
+       
         <form id="appointmentForm" name="appointmentForm" onsubmit="return doValidate()" method="POST">
+        <h1>Make A Reservation</h1>
             <div class="form-group">
                 <label>Vehicle Number</label>
                 <input type="text" id="txtboxes" name="vehicleNumber" placeholder="ABC-1234" required>
@@ -105,10 +111,10 @@ if (isset($_POST['submit'])) {
             </div>
             <button type="submit">Book Appointment</button>
         </form>
-    </div>
+    
 
     <!-- Validation -->
-    <script src="js/validate(appointment).js"></script>
+    <script src="js/validate-appointment.js"></script>
 
     <!-- nav-scroll frosted glass effect -->
     <script src="js/navbar-scroll.js"></script>
