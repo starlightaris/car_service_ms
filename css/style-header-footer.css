@@ -1,6 +1,6 @@
 /* Header */
 .navbar-toggler {
-  margin-left: auto; /* Moves the hamburger menu to the right */
+  margin-left: auto; 
   position: relative;
   top: 0;
 }
@@ -32,24 +32,21 @@ width: 100%;
 /* Sidebar (Offcanvas Menu) */
 .sidebar {
   width: 250px;
-  /* Ensures sidebar takes proper width */
   max-width: 100%;
   height: 100vh;
-  /* Full viewport height */
+
   background-color: rgba(255, 255, 255, 0.15);
-  /* Semi-transparent */
+
   /* backdrop-filter: blur(10px); */
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* Ensure Offcanvas Opens Properly */
+
 
 .offcanvas-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Centers items horizontally */
   justify-content: center;
-  /* Centers items vertically */
   text-align: center;
   padding-top: 20px;
 }
@@ -63,13 +60,13 @@ width: 100%;
 }
 
 footer a {
-  text-decoration: none !important;  /* Removes underline */
-  display: inline-flex;  /* Ensures icons align properly */
+  text-decoration: none !important;  
+  display: inline-flex;  
   align-items: center;
 }
 
 footer a i {
-  vertical-align: middle; /* Ensures the icon aligns properly */
+  vertical-align: middle; 
 }
 
 /* Apply the frosted effect only if backdrop-filter is supported. (Edge failed, Chrome works) */
@@ -97,22 +94,22 @@ footer a i {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Move items more to the center */
+   
 }
 .navbar {
   display: flex;
-  align-items: center; /* Ensures items are vertically aligned */
+  align-items: center; 
   padding: 15px 20px;
 }
 
 .navbar-brand {
-    margin-right: auto; /* Align logo to the left */
-    font-size: 1.2rem; /* Adjust logo size */
+    margin-right: auto;
+    font-size: 1.2rem;
 }
 
 .navbar-toggler {
   position: absolute;
-  right: 15px; /* Ensures consistent positioning */
+  right: 15px;
   top: 15px;
 }
 .offcanvas-body {
@@ -136,28 +133,23 @@ footer a i {
     max-width: 250px;
     text-align: center;
     margin: 2px auto;
-    /* Centers them */
+ 
     white-space: nowrap;
     padding: 5px 0;
     line-height: 1;
 }
 .sidebar .btn {
   width: 100%;
-  /* Match link width */
   max-width: 250px;
-  /* Same as links */
   display: block;
-  /* Ensure buttons align with links */
+ 
 }
 
 .sidebar .d-flex {
   flex-direction: column;
-  /* Stack items vertically */
   align-items: center;
-  /* Center align the buttons */
   justify-content: center;
   width: 100%;
-  /* Ensure full width */
   margin-top: 20px;
 }
 
@@ -173,20 +165,18 @@ footer a i {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  /* Space from other nav items */
+
 }
 
 
 
-/* Make Navbar items center-aligned */
+
 .navbar-nav {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  /* Adds spacing between items */
   margin-bottom: 30px;
 }
 .nav-item {
@@ -202,15 +192,15 @@ footer a i {
 
 .navbar-nav:last-child {
   margin-bottom: 50px;
-  /* Push buttons down */
+
 }
 .navbar .d-flex.justify-content-center {
-  align-items: center; /* Ensures Login and Register align properly */
+  align-items: center; 
 }
 
 .navbar .register-btn {
-  padding: 6px 12px; /* Adjust padding to match other nav items */
-  height: auto; /* Ensures consistent height */
+  padding: 6px 12px; 
+  height: auto; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,7 +212,7 @@ footer a i {
 /* Extra Small Screens (max-width: 576px) */
 @media (max-width: 576px) {
 .navbar {
-    padding: 10px; /* Reduce padding for extra small screens */
+    padding: 10px; 
 }
 
 .navbar-brand {
@@ -230,7 +220,7 @@ footer a i {
 }
 
 .navbar-toggler {
-    font-size: 0.9rem; /* Reduce hamburger size */
+    font-size: 0.9rem; 
 }
 
 
