@@ -1,13 +1,9 @@
-body {
+body, html {
+    /* height: 100%; */
+    align-items: center;
     background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    background-attachment: fixed; /* Keeps background fixed while scrolling */
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
 }
+
 form {
     max-width: 600px;
     width: 100%;
@@ -18,14 +14,14 @@ form {
     margin: 50px auto;
 }
 
-.container {
+/* .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 700px;
-}
+} */
 
 h1 {
     text-align: center;
@@ -77,3 +73,5 @@ button {
 button:hover {
     background-color: #218838;
 }
+
+
