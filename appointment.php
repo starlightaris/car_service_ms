@@ -44,6 +44,10 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+    <div id="header">
+        <?php include("header.php"); ?>
+    </div>
+
     <div class="container">
         <h1>Make A Reservation</h1>
         <form id="appointmentForm" name="appointmentForm" onsubmit="return doValidate()" method="POST">

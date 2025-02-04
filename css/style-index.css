@@ -51,16 +51,16 @@
     .why-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-  
+
     .why-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-  
+
     .icon-hover {
       transition: transform 0.3s ease;
     }
-  
+
     .icon-hover:hover {
       transform: scale(1.2);
     }
@@ -68,7 +68,7 @@
     .service-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-  
+
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -79,7 +79,7 @@
       margin: 0 auto;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-  
+
     .testimonial-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -88,7 +88,7 @@
     .cta-button {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-  
+
     .cta-button:hover {
       transform: translateY(-5px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -97,18 +97,67 @@
     .contact-button {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-  
+
     .contact-button:hover {
       transform: translateY(-5px);
       box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
     }
 
-    .blog-card {
+    /* .blog-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
   
     .blog-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    } */
+
+    /* Grid Layout */
+
+
+    /* Grid for Blog Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      /* Responsive grid */
+      gap: 20px;
+      /* Space between cards */
+      padding: 0 20px;
+      /* Add some padding on the sides */
     }
 
+    /* Card Styling */
+    .blog-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      /* Fixed height for images */
+      object-fit: cover;
+      /* Ensure images cover the area */
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .btn-outline-primary {
+      margin-top: 10px;
+    }
