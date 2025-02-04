@@ -22,7 +22,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
       <span class="navbar-toggler-icon"></span>
     </button>
     <!--side bar-->
-    <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-start w-100 sidebar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <!--sidebar Header -->
       <div class="offcanvas-header text-white border-bottom">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
@@ -108,4 +108,8 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
   window.addEventListener('scroll', () => {
     navEl.classList.toggle('navbar-scrolled', window.scrollY >= 30);
   }); -->
-</script>
+<!-- </script>
+  });
+</script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
