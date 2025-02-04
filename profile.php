@@ -65,9 +65,6 @@
 
     }
 
-
-
-
 ?>
 
 
@@ -83,24 +80,25 @@
     <link rel="stylesheet" type="text/css" href="css/style-offer.css">
   <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
   
-    <script src="jquery-3.7.1.min.js"></script>
-    <!-- <script src="js/Validate(register).js"></script> -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+ 
 
-
+    <!--timer for profile update success meassage-->
     <script>
-    $(document).ready(function() {
-        setTimeout(() => {
-        $('#alertBox').each(function() {
-            bootstrap.Alert.getOrCreateInstance(this).close();
+   $(document).ready(function() {
+    setTimeout(() => {
+        $("#alertBox").fadeOut("slow", function() {
+            $(this).remove();
         });
-        }, 3000);
-    });
+    }, 2000);
+});
+
     </script>
 
+    <!--phone numberr validation-->
     <script>
-        function telValidate(){
-            
-    //phone numberr validation
+    function telValidate(){
+   
     var tel=document.forms["myform"]["txttel"].value;
     var regex= /^[0-9]{10}$/;
     var telError=document.getElementById("telError");
@@ -112,7 +110,7 @@
     else{
         telError.style.display = "none";
         }
-  return true;
+        return true;
         }
   </script>
 
@@ -120,6 +118,7 @@
 </head>
 
 <body class="profile-page">
+<!--header-->
 <div id="header"></div>
     <?php
     include("header.php");
@@ -127,7 +126,6 @@
 
 
     <div class="page-header header-filter"></div>
-    
     <div class="main main-raised">
         <div class="profile-content">
             <div class="container">
@@ -198,10 +196,27 @@
                               <!-- Button Row -->
                                 <div class="row mt-4">
                                     <div class="col-12 d-flex justify-content-center gap-3">
-                                        <input type="submit" class="btn btn-primary submit px-4" name="btnupdate" value="Update Profile">
+                                        <input type="submit" class="btn btn-primary submit px-4" id="btnupdate" name="btnupdate" value="Update Profile" disabled>
                                         <input type="reset" class="btn btn-outline-secondary submit px-4" name="btncancel" value="Cancel">
                                     </div>
                                 </div>
+                            
+                            <!--enabling update btn whn input field is chnged-->
+                              <script>
+                            const input = document.getElementById("nameInput");
+                            const updateBtn = document.getElementById("updateBtn");
+                            const form = document.getElementById("myForm");
+
+                           
+                            input.addEventListener("input", () => {
+                                updateBtn.disabled = false;
+                            });
+
+                          
+                            form.addEventListener("reset", () => {
+                                updateBtn.disabled = true;
+                            });
+                             </script>
                             </form>
                         </div>
                     </div> 
