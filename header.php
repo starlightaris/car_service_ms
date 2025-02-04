@@ -1,7 +1,11 @@
 <?php
 
 include 'php/conf.php';
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+
 $currentPage = basename($_SERVER['REQUEST_URI']);
 
 ?>
@@ -12,7 +16,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
   <div class="container d-flex align-items-center">
     <!--logo-->
 
-    <a class="navbar-brand fs-4 ms-auto mt-n1" href="home.html">Offcanvas navbar</a>
+    <a class="navbar-brand fs-4 ms-auto mt-n1" href="index.php">Offcanvas navbar</a>
     <!--toggle btn-->
     <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

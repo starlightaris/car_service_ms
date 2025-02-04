@@ -1,7 +1,10 @@
 <?php
 
 include 'php/conf.php';
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 if (isset($_POST['btnsubmit'])) {
 
@@ -89,6 +92,8 @@ if (isset($_POST['btnsubmit'])) {
                         </div>
                     </div>
                 </div>
+                <div class="row g-3 text-secondary">
+                    <center>Don't have an account? <a href="register.php">Register</a><center>
             </form>
         </div>
     </div>
