@@ -24,7 +24,7 @@ body, html {
   }
 .container{
     /* margin-top: 100px; */
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 h1{
     text-align: center;
@@ -34,6 +34,7 @@ h1{
     width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    
  
 }
 .card-body{
@@ -47,7 +48,9 @@ h1{
     color: white;
 }
 h5{
+
   font-size: 20px;
+
 }
 .card-img-top {
     width: 100%; 

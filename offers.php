@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-=======
 
-<head>
+<!-- <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Offers</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style-offer.css">
-  <link rel="stylesheet" type="text/css" href="css/style-header.css">
->>>>>>> 06b0f5f71dc58a8244e8baf9f2f7b71661ee6903
+  <link rel="stylesheet" type="text/css" href="css/style-header.css"> -->
 
 <head>
   <meta charset="utf-8">
@@ -21,22 +18,17 @@
   <link rel="stylesheet" type="text/css" href="css/style-offer.css">
   <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Offers</title>
 
 </head>
 
 <body>
   <div class="hero-image">
-<<<<<<< HEAD
-    <div id="header">
-      <?php include("header.php"); ?>
-    </div>
-=======
     <div id="header"></div>
     <?php
     include("header.php");
     ?>
 
->>>>>>> 06b0f5f71dc58a8244e8baf9f2f7b71661ee6903
 
     <div class="hero-text">
       <h1>Offers</h1>
@@ -91,15 +83,6 @@
       <div class="col"></div>
     </div>
   </div>
-<<<<<<< HEAD
-  <script src="js/navbar-scroll.js"></script>
-  <!-- Footer -->
-  <div id="footer">
-    <?php include("footer.php"); ?>
-  </div>
-  
-=======
->>>>>>> 06b0f5f71dc58a8244e8baf9f2f7b71661ee6903
 </body>
 
 </html>
