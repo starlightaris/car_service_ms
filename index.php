@@ -267,11 +267,10 @@
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
   <!-- nav-scroll frosted glass effect -->
   <script src="js/navbar-scroll.js"></script>
-
   <!-- Footer -->
   <div id="footer">
     <?php include("footer.php"); ?>
