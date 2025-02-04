@@ -13,9 +13,7 @@ form {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.8); /* Adjusted for better visibility */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin: 180px auto 50px; /*top, right-right, bottom respectively*/
-    /* padding-top: 30px; */
-    
+    margin: 180px auto 50px; /*top, right-right, bottom respectively*/   
 }
 
 /* .container {
