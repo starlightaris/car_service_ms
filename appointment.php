@@ -29,12 +29,17 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-    <title>Kavinda Auto Engineering</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KAE - Make Reservation</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Online Appointment</title>
+    <!-- Font Awesome for Social Media icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custome CSS -->
     <link rel="stylesheet" href="css/style-appointment.css">
 </head>
 
@@ -98,7 +103,17 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
 
+    <!-- Validation -->
     <script src="js/validate(appointment).js"></script>
+
+    <!-- nav-scroll frosted glass effect -->
+    <script src="js/navbar-scroll.js"></script>
+
+    <!-- Footer -->
+    <div id="footer">
+        <?php include("footer.php"); ?>
+    </div>
+
 </body>
 
 </html>

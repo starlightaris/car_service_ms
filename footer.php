@@ -37,10 +37,10 @@
           <!-- Content -->
           <h6 class="text-uppercase fw-bold">Kavinda Auto Engineering</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-          <p class="text-white">
+          <label class="text-white">
             Your trusted partner for car repairs and maintenance. We specialize in engine repairs, brake servicing,
             and more. Drive safely with us!
-          </p>
+</label>
         </div>
 
         <!-- Grid column 2 -->
@@ -48,18 +48,18 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold">Our Services</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-          <p>
+          <label>
             <a href="#!" class="text-white">Engine Repairs</a>
-          </p>
-          <p>
+          </label>
+          <label>
             <a href="#!" class="text-white">Brake Servicing</a>
-          </p>
-          <p>
+          </label>
+          <label>
             <a href="#!" class="text-white">Oil Changes</a>
-          </p>
-          <p>
+          </label>
+          <label>
             <a href="#!" class="text-white">Car Diagnostics</a>
-          </p>
+          </label>
         </div>
 
         <!-- Grid column 3 -->
@@ -67,7 +67,7 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold">Useful Links</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-          <p>
+          <label>
             <?php
             // Check if the user is logged in
             if (isset($_SESSION['userId'])) {
@@ -76,16 +76,16 @@
               echo '<a href="login.php" class="text-white">Book an Appointment</a>';
             }
             ?>
-          </p>
-          <p>
+          </label>
+          <label>
             <a href="services.php" class="text-white">Service Packages</a>
-          </p>
-          <p>
+          </label>
+          <label>
             <a href="Branches.php" class="text-white">Branches</a>
-          </p>
-          <p>
+          </label>
+          <label>
             <a href="contact.php" class="text-white">Customer Reviews</a>
-          </p>
+          </label>
         </div>
 
         <!-- Grid column 4-->
@@ -93,10 +93,10 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold">Contact</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-          <p><i class="fas fa-home mr-3"></i> Battaramulla, Sri Lanka</p>
-          <p><i class="fas fa-envelope mr-3"></i> <a href="mailto:info@kavindaauto.com" class="text-white">info@kavindaauto.com</a></p>
-          <p><i class="fas fa-phone mr-3"></i> <a href="tel:+94112345678" class="text-white">+94 112 345 678</a></p>
-          <p><i class="fas fa-print mr-3"></i> <a href="tel:+94112345679" class="text-white">+94 112 345 679</a></p>
+          <label><i class="fas fa-home mr-3"></i> Battaramulla, Sri Lanka</l>
+          <label><i class="fas fa-envelope mr-3"></i> <a href="mailto:info@kavindaauto.com" class="text-white">info@kavindaauto.com</a></label>
+          <label><i class="fas fa-phone mr-3"></i> <a href="tel:+94112345678" class="text-white">+94 112 345 678</a></label>
+          <label><i class="fas fa-print mr-3"></i> <a href="tel:+94112345679" class="text-white">+94 112 345 679</a></label>
         </div>
       </div>
     </div>
