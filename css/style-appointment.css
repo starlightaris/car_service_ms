@@ -1,18 +1,23 @@
-body, html {
-    /* height: 100%; */
-    align-items: center;
+html, body {
+   
+    margin: 0;
+    padding: 0;
     background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    /* background-image: url("../images/reg.jpg"); */
+    align-items: center;
+    justify-content: center;
 }
-
 form {
     max-width: 600px;
     width: 100%;
     padding: 30px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0.8); /* Adjusted for better visibility */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     margin: 50px auto;
 }
+
+
 
 /* .container {
     background-color: #fff;
@@ -28,14 +33,14 @@ h1 {
     margin-bottom: 20px;
 }
 
-.form-group {
+ .form-group {
     margin-bottom: 15px;
 }
 
 .checkbox-group{
     position: relative;
     left: 20px;
-    
+
 }
 
 label {
