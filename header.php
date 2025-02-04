@@ -1,8 +1,13 @@
 <?php
 
 include 'php/conf.php';
+
+
+
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
+  
+
 }
 
 
@@ -87,29 +92,23 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
               <!-- Login / Sign Up -->
               <div class="d-flex justify-content-end align-items-baseline ms-auto gap-3">
                 <a href="login.php" class="text-white" style="font-size:15px;">Login</a>
+                <?php } ?>
                 
                 <?php
             if (isset($_SESSION['userId'])) {
-              echo '<a href="appointment.php" class="text-white text-decoration-none px-3 py-2 rounded-2 bg-danger " style="background-color:red;font-size:15px;">Book Now</a>';
+              echo '<a href="appointment.php" class="text-white text-decoration-none px-3 py-2 rounded-2 bg-danger" style="background-color:red;font-size:15px;">Book Now</a>';
             }
             else{
-              echo '<a href="appointment.php" class="text-white text-decoration-none px-3 py-2 rounded-2 bg-danger " style="background-color:red;font-size:15px;">Book Now</a>';
+              echo '<a href="login.php" class="text-white text-decoration-none px-3 py-2 rounded-2 bg-danger" style="background-color:red;font-size:15px;">Book Now</a>';
             }
             ?>
               </div>
-            <?php } ?>
+           
           </div>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- <script>
-  window.addEventListener('scroll', () => {
-    navEl.classList.toggle('navbar-scrolled', window.scrollY >= 30);
-  });
 
-  });
-</script>  -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

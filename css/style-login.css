@@ -1,3 +1,11 @@
+body, html {
+    height: 100%;
+    align-items: center;
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+   
+}
+
+/* 
 body {
     background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     background-attachment: fixed;
@@ -7,27 +15,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
-.back-arrow {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 8px 12px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-  
-  .back-arrow:hover {
-    background: rgba(0, 0, 0, 0.5);
-  }
 
 
 .row {
