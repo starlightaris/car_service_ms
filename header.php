@@ -22,7 +22,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
       <span class="navbar-toggler-icon"></span>
     </button>
     <!--side bar-->
-    <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-start w-100 sidebar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <!--sidebar Header -->
       <div class="offcanvas-header text-white border-bottom">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
@@ -50,7 +50,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
             <a class="nav-link <?php echo ($currentPage == 'branches.php') ? 'active' : ''; ?>" href="branches.php">Branches</a>
           </li>
 
-          <div class="d-flex align-items-baseline ms-auto">
+          <div class="d-flex flex-column align-items-center">
           <?php
             if (isset($_SESSION['userId'])) {
               echo '<a href="appointment.php" class="text-white text-decoration-none px-4 py-2 bg-primary rounded-2 w-100 w-md-auto" style="background-color:blue;">Book Now</a>';
@@ -95,9 +95,9 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
               </li>
             <?php } else { ?>
               <!-- Login / Sign Up -->
-              <div class="d-flex justify-content-end align-items-baseline ms-auto gap-3">
+              <div class="d-flex justify-content-center gap-2 mt-2">
                 <a href="login.php" class="text-white">Login</a>
-                <a href="register.php" class="text-white text-decoration-none px-2 py-2 rounded-2 bg-danger " style="background-color:red;">Register</a>
+                <a href="register.php" class="text-white text-decoration-none px-2 py-2 rounded-2 bg-danger register-btn" style="background-color:red;">Register</a>
               </div>
             <?php } ?>
           </div>
@@ -111,3 +111,5 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
     navEl.classList.toggle('navbar-scrolled', window.scrollY >= 30);
   });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
