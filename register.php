@@ -58,16 +58,19 @@ header('location:login.php');
         <link rel="stylesheet" type="text/css" href="css/style-register.css">
     </head>
     <body>
-    <?php
-      include("header.php");
-      ?>
-   
+     
+  
     
-        <div class="container">
         
+        <div class="container">
+            <!--back arrow-->
+        <a href="javascript:history.back()" class="back-arrow">
+        &larr;
+        </a>
+                    
             <div class="form mx-auto"> 
                 <div class="top text-center mb-4">
-                    <header class="h3">Register</header>
+                    <header class="h3 text-white">Register</header>
                 </div>
                 <div id="alertBox1" class="alert alert-danger mt-2 d-none" role="alert">
                     Please enter a valid email address.
@@ -139,7 +142,7 @@ header('location:login.php');
                     <div class="row g-3">
                         <div class="col-12">
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary w-100 submit" name="submit" value="Register">
+                                <input type="submit" class="btn btn-light w-50 d-block mx-auto submit" name="submit" value="Register">
                             </div>
                         </div>
                     </div>

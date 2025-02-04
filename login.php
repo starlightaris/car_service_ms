@@ -43,6 +43,10 @@ if (isset($_POST['btnsubmit'])) {
    
    
     <div class="container">
+              <!--back arrow-->
+              <a href="javascript:history.back()" class="back-arrow">
+                 &larr;
+             </a>
         <div class="form mx-auto">
             <div class="top text-center mb-4">
                 <header class="h3">Login</header>

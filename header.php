@@ -53,7 +53,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
           <div class="d-flex align-items-baseline ms-auto">
           <?php
             if (isset($_SESSION['userId'])) {
-              echo '<a href="appointment.php" class="text-white text-decoration-none px-4 py-2 bg-primary rounded-2" style="background-color:blue;">Book Now</a>';
+              echo '<a href="appointment.php" class="text-white text-decoration-none px-4 py-2 bg-primary rounded-2 w-100 w-md-auto" style="background-color:blue;">Book Now</a>';
             }
             else{
               echo '<a href="login.php" class="text-white text-decoration-none px-4 py-2 bg-primary rounded-2" style="background-color:blue;">Book Now</a>';
@@ -97,7 +97,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
               <!-- Login / Sign Up -->
               <div class="d-flex justify-content-end align-items-baseline ms-auto gap-3">
                 <a href="login.php" class="text-white">Login</a>
-                <a href="register.php" class="text-white text-decoration-none px-2 py-2 rounded-2 bg-danger" style="background-color:red;">Register</a>
+                <a href="register.php" class="text-white text-decoration-none px-2 py-2 rounded-2 bg-danger " style="background-color:red;">Register</a>
               </div>
             <?php } ?>
           </div>

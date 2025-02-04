@@ -1,6 +1,8 @@
 body {
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    background-attachment: fixed; /* Keeps background fixed while scrolling */
+    /* background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
+    /* background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); */
+    background-image: url("../images/reg3.jpg");
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh; 
@@ -8,31 +10,65 @@ body {
     align-items: center; 
     justify-content: center;
 }
+
+.back-arrow {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background:  rgba(0, 0, 0, 0.5);;
+    padding: 8px 12px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+  
+  .back-arrow:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
 .row{
     margin:10px;
 }
 
+
 .form {
+  
     max-width: 600px;
     width: 100%;
     padding: 30px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0);
+    background:rgba(255, 255, 255, 0.05);;
+    /* background: transparent; */
+    /* border: 1px solid rgba(255, 255, 255, 0.3);  */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     margin: 50px auto;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .input-field {
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    color: white;
+    /* border: 1px solid #ddd; */
     border-radius: 20px;
     font-size: 16px;
     transition: border-color 0.3s ease;
-    background:rgba(255,255,255,0.3);
+    background:rgba(255,255,255,0.1);
+}
+.input-field::placeholder {
+    color:white; 
+    opacity: 0.5; 
 }
 
+
 .input-field:focus {
-    border-color: #007bff;
+    /* border-color: #007bff; */
+    color: white;
     outline: none;
     background:rgba(255,255,255,0.3);
 }
