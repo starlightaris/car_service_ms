@@ -4,6 +4,8 @@
       overflow: hidden;
     }
 
+   
+
     .full-screen-carousel .carousel-inner,
     .full-screen-carousel .carousel-item,
     .full-screen-carousel img {
@@ -11,6 +13,11 @@
       width: 100%;
       object-fit: cover;
     }
+  
+    .carousel-item img {
+    
+      filter: brightness(70%); 
+  }
 
     /* Responsive captions */
     .carousel-caption {

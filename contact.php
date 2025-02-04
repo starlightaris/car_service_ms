@@ -47,15 +47,17 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" type="text/css" href="css/style-contact.css">
     <!-- Custom Validation (js) -->
     <script src="js/validate-contact.js"></script>
-
+    
+    <!--timer success meassage-->
     <script>
-        $(document).ready(function () {
-            setTimeout(() => {
-                $('#alertBox').each(function () {
-                    bootstrap.Alert.getOrCreateInstance(this).close();
-                });
-            }, 3000);
+   $(document).ready(function() {
+    setTimeout(() => {
+        $("#alertBox").fadeOut("slow", function() {
+            $(this).remove();
         });
+    }, 3000);
+});
+
     </script>
 </head>
 

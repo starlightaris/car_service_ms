@@ -171,16 +171,14 @@ if (isset($_POST['btncancel'])) {
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>First Name</label>
-                                            <input type="text" name="txtfname" id="input-field"
-                                                class="form-control input-field"
+                                            <input type="text" name="txtfname" id="fname" class="form-control input-field"
                                                 value="<?php echo isset($fname) ? $fname : ''; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>Last Name</label>
-                                            <input type="text" name="txtlname" id="input-field"
-                                                class="form-control input-field"
+                                            <input type="text" name="txtlname" id="lname" class="form-control input-field"
                                                 value="<?php echo isset($lname) ? $lname : ''; ?>" required>
                                         </div>
                                     </div>
@@ -190,16 +188,14 @@ if (isset($_POST['btncancel'])) {
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" name="txtemail" id="input-field"
-                                                class="form-control input-field"
+                                            <input type="email" name="txtemail" id="email" class="form-control input-field"
                                                 value="<?php echo isset($email) ? $email : ''; ?>" readonly required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="tel" name="txttel" id="input-field"
-                                                class="form-control input-field"
+                                            <input type="tel" name="txttel" id="phone" class="form-control input-field"
                                                 value="<?php echo isset($phone) ? $phone : ''; ?>" required>
                                         </div>
                                         <div class="row g-3">
@@ -219,23 +215,25 @@ if (isset($_POST['btncancel'])) {
                                             name="btncancel" value="Cancel">
                                     </div>
                                 </div>
+                            
+                            <!--enabling update btn whn input field is chnged-->
+                              <script>
+                            const inputs = document.querySelectorAll(".input-field");
+                            const updateBtn = document.getElementById("btnupdate");
+                            const form = document.getElementById("myForm");
 
-                                <!--enabling update btn whn input field is chnged-->
-                                <script>
-                                    const input = document.getElementById("input-field");
-                                    const updateBtn = document.getElementById("btnupdate");
-                                    const form = document.getElementById("myForm");
+                                            
+                              inputs.forEach((input) => {
+                            input.addEventListener("input", () => {
+                                updateBtn.disabled = false; 
+                            });
+                        });
 
-
-                                    input.addEventListener("input", () => {
-                                        updateBtn.disabled = false;
-                                    });
-
-
-                                    form.addEventListener("reset", () => {
-                                        updateBtn.disabled = true;
-                                    });
-                                </script>
+                                            
+                            form.addEventListener("reset", () => {
+                                updateBtn.disabled = true;
+                            });
+                             </script>
                             </form>
                         </div>
                     </div>
