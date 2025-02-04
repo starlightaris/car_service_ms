@@ -15,16 +15,22 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-service.css">
     <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
+    <!-- Custom Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="hero-image">
+        <!-- Header -->
         <div id="header">
             <?php include("header.php"); ?>
         </div>
         <div class="hero-text">
             <h1>Services</h1>
-            "Discover a wide range of services designed to meet your needs. From professional consultations to quality product offerings, we have you covered."
+            "Discover a wide range of services designed to meet your needs. From professional consultations to quality
+            product offerings, we have you covered."
         </div>
     </div>
 

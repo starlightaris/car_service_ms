@@ -2,8 +2,7 @@ html, body {
    
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    /* background-image: url("../images/reg.jpg"); */
+    background-image: url("../images/reg.jpg");
     align-items: center;
     justify-content: center;
 }
@@ -14,10 +13,10 @@ form {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.8); /* Adjusted for better visibility */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin: 50px auto;
+    margin: 180px auto 50px; /*top, right-right, bottom respectively*/
+    /* padding-top: 30px; */
+    
 }
-
-
 
 /* .container {
     background-color: #fff;
@@ -40,7 +39,6 @@ h1 {
 .checkbox-group{
     position: relative;
     left: 20px;
-
 }
 
 label {

@@ -86,20 +86,21 @@ if (isset($_POST['btncancel'])) {
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-profile.css">
     <link rel="stylesheet" type="text/css" href="css/style-offer.css">
-  <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
-  
-
- 
+    <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
+    <!-- Custom Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <!--timer for profile update success meassage-->
     <script>
-   $(document).ready(function() {
-    setTimeout(() => {
-        $("#alertBox").fadeOut("slow", function() {
-            $(this).remove();
+        $(document).ready(function () {
+            setTimeout(() => {
+                $("#alertBox").fadeOut("slow", function () {
+                    $(this).remove();
+                });
+            }, 2000);
         });
-    }, 2000);
-});
 
     </script>
 
@@ -123,15 +124,14 @@ if (isset($_POST['btncancel'])) {
         }
     </script>
 
-
 </head>
 
 <body class="profile-page">
+    <!-- Header -->
     <div id="header"></div>
     <?php
     include("header.php");
     ?>
-
 
     <div class="page-header header-filter"></div>
     <div class="main main-raised">
@@ -167,19 +167,20 @@ if (isset($_POST['btncancel'])) {
                                 }
                                 ?>
 
-
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>First Name</label>
-                                            <input type="text" name="txtfname" id="input-field" class="form-control input-field"
+                                            <input type="text" name="txtfname" id="input-field"
+                                                class="form-control input-field"
                                                 value="<?php echo isset($fname) ? $fname : ''; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>Last Name</label>
-                                            <input type="text" name="txtlname" id="input-field" class="form-control input-field"
+                                            <input type="text" name="txtlname" id="input-field"
+                                                class="form-control input-field"
                                                 value="<?php echo isset($lname) ? $lname : ''; ?>" required>
                                         </div>
                                     </div>
@@ -189,14 +190,16 @@ if (isset($_POST['btncancel'])) {
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" name="txtemail" id="input-field" class="form-control input-field"
+                                            <input type="email" name="txtemail" id="input-field"
+                                                class="form-control input-field"
                                                 value="<?php echo isset($email) ? $email : ''; ?>" readonly required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="tel" name="txttel" id="input-field" class="form-control input-field"
+                                            <input type="tel" name="txttel" id="input-field"
+                                                class="form-control input-field"
                                                 value="<?php echo isset($phone) ? $phone : ''; ?>" required>
                                         </div>
                                         <div class="row g-3">
@@ -210,27 +213,29 @@ if (isset($_POST['btncancel'])) {
                                 <!-- Button Row -->
                                 <div class="row mt-4">
                                     <div class="col-12 d-flex justify-content-center gap-3">
-                                        <input type="submit" class="btn btn-primary submit px-4" id="btnupdate" id="btnupdate" name="btnupdate" value="Update Profile" disabled>
-                                        <input type="reset" class="btn btn-outline-secondary submit px-4" name="btncancel" value="Cancel">
+                                        <input type="submit" class="btn btn-primary submit px-4" id="btnupdate"
+                                            id="btnupdate" name="btnupdate" value="Update Profile" disabled>
+                                        <input type="reset" class="btn btn-outline-secondary submit px-4"
+                                            name="btncancel" value="Cancel">
                                     </div>
                                 </div>
-                            
-                            <!--enabling update btn whn input field is chnged-->
-                              <script>
-                            const input = document.getElementById("input-field");
-                            const updateBtn = document.getElementById("btnupdate");
-                            const form = document.getElementById("myForm");
 
-                           
-                            input.addEventListener("input", () => {
-                                updateBtn.disabled = false;
-                            });
+                                <!--enabling update btn whn input field is chnged-->
+                                <script>
+                                    const input = document.getElementById("input-field");
+                                    const updateBtn = document.getElementById("btnupdate");
+                                    const form = document.getElementById("myForm");
 
-                          
-                            form.addEventListener("reset", () => {
-                                updateBtn.disabled = true;
-                            });
-                             </script>
+
+                                    input.addEventListener("input", () => {
+                                        updateBtn.disabled = false;
+                                    });
+
+
+                                    form.addEventListener("reset", () => {
+                                        updateBtn.disabled = true;
+                                    });
+                                </script>
                             </form>
                         </div>
                     </div>
@@ -248,4 +253,5 @@ if (isset($_POST['btncancel'])) {
     </div>
 
 </body>
+
 </html>

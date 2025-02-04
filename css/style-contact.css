@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     height: 100%;
     align-items: center;
     background-color: #f4f4f4;
@@ -12,8 +13,9 @@ body, html {
     background-size: cover;
     position: relative;
     margin-bottom: 30px;
-  
+
 }
+
 .hero-text {
     font-size: 3rem;
     text-align: center;
@@ -24,32 +26,16 @@ body, html {
     color: white;
     font-style: italic;
     font-size: 1.2rem;
-  }
-  h1{
-    font-size: 3rem;
-    font-style: normal;
-  }
-
-
-
-/* 
-
-.body{
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-} */
-
-
-.container {
-    /* background: #F5DFBB; */
-    /* padding: 40px; */
-    border-radius: 10px;
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
-    /* margin-bottom: 20px; */
 }
 
+h1 {
+    font-size: 3rem;
+    font-style: normal;
+}
+
+.container {
+    border-radius: 10px;
+}
 
 h2 {
     font-weight: bold;
@@ -59,7 +45,6 @@ h2 {
 h2 span {
     color: red;
 }
-
 
 .col-md-6 p {
     font-size: 16px;
@@ -71,7 +56,6 @@ h2 span {
     color: #d9534f;
     font-weight: bold;
 }
-
 
 form {
     background: #fff;
@@ -89,7 +73,6 @@ form {
     border: 1px solid #ccc;
 }
 
-
 .btn-danger {
     background-color: #f2542d;
     border: none;
@@ -98,13 +81,13 @@ form {
     border-radius: 20px;
     transition: 0.3s;
 }
-.error-text {
-color: red;
-font-size: 14px;
-display: none;
-margin-top: 2px;
-}
 
+.error-text {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top: 2px;
+}
 
 .btn-danger:hover {
     background-color: #c9302c;

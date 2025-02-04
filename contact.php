@@ -37,7 +37,10 @@ if (isset($_POST['submit'])) {
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Font Awesome for Social Media icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <!-- Custom Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-offer.css">
     <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
@@ -65,7 +68,8 @@ if (isset($_POST['submit'])) {
 
         <div class="hero-text">
             <h1>Contact Us</h1>
-            "Have a question or need assistance? Get in touch with us through our contact form, email, or phone. We're here to help!"
+            "Have a question or need assistance? Get in touch with us through our contact form, email, or phone. We're
+            here to help!"
         </div>
     </div>
 

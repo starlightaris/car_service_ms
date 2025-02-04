@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
   <!-- Section: Social media -->
-  <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+  <section class="d-flex justify-content-between p-4" style="background-color:rgba(255, 0, 0, 0.67)">
     <!-- Left -->
     <div class="me-5">
       <span>Get connected with us on social networks:</span>
@@ -49,16 +49,16 @@
           <h6 class="text-uppercase fw-bold">Our Services</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" /><br>
           <label>
-            <a href="#!" class="text-white">Engine Repairs</a>
+            <a href="services.php" class="text-white">Engine Repairs</a>
           </label><br>
           <label>
-            <a href="#!" class="text-white">Brake Servicing</a>
+            <a href="services.php" class="text-white">Brake Servicing</a>
           </label><br>
           <label>
-            <a href="#!" class="text-white">Oil Changes</a>
+            <a href="services.php" class="text-white">Oil Changes</a>
           </label><br>
           <label>
-            <a href="#!" class="text-white">Car Diagnostics</a>
+            <a href="services.php" class="text-white">Car Diagnostics</a>
           </label>
         </div>
 

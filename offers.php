@@ -15,22 +15,27 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="css/style-offer.css">
   <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
+  <!-- Custom Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="hero-image">
+  <div class="hero-image">
     <!--header-->
-  <div id="header"></div>
+    <div id="header"></div>
     <?php
     include("header.php");
     ?>
 
     <div class="hero-text">
       <h1>Offers</h1>
-      "Explore our exclusive offers and discounts tailored to provide the best value for our services. Don't miss out on limited-time deals!"
+      "Explore our exclusive offers and discounts tailored to provide the best value for our services. Don't miss out on
+      limited-time deals!"
     </div>
-    </div>
+  </div>
   </div>
 
   <div class="container">

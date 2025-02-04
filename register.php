@@ -63,24 +63,22 @@ if (isset($_POST['submit'])) {
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-register.css">
     <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
-
+    <!-- Custom Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-      
-       <!--header-->
-  <div id="header"></div>
+
+    <!--Header-->
+    <div id="header"></div>
     <?php
     include("header.php");
     ?>
 
     <div class="container">
-        <!--back arrow-->
-        <!-- <a href="javascript:history.back()" class="back-arrow">
-            &larr;
-        </a> -->
-
         <div class="form mx-auto">
             <div class="top text-center mb-4">
                 <header class="h3 text-white">Register</header>
@@ -124,7 +122,6 @@ if (isset($_POST['submit'])) {
                         }
                     }
                     ?>
-
 
                 </div>
 
@@ -171,13 +168,13 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
     </div>
-       <!-- nav-scroll frosted glass effect -->
-       <script src="js/navbar-scroll.js"></script>
+    <!-- nav-scroll frosted glass effect -->
+    <script src="js/navbar-scroll.js"></script>
 
-        <!-- Footer -->
-        <div id="footer">
-            <?php include("footer.php"); ?>
-        </div>
+    <!-- Footer -->
+    <div id="footer">
+        <?php include("footer.php"); ?>
+    </div>
 
 </body>
 
