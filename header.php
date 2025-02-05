@@ -13,7 +13,9 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
     <!--logo-->
     <a class="navbar-brand" href="index.php">
       <img class="logo" src="images/kae-logo-dark.png">
+      <div class="company-name">
       Kavinda Auto Engineering
+      </div>
     </a>
 
     <!--toggle btn-->

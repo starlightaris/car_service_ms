@@ -4,6 +4,10 @@
   position: relative;
   top: 0;
 }
+.navbar-nav{
+  display: flex;
+  align-items: center;
+}
 
 .navbar {
   position: fixed;
@@ -20,6 +24,8 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, padding 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand .logo{
@@ -250,6 +256,8 @@ footer a i {
   .navbar-brand {
     margin-top: 0;
     text-align: left;
+    display: flex;
+    align-items: center;
   }
 
   .navbar-toggler {
@@ -309,3 +317,51 @@ footer a i {
     margin: 0 0.5rem;
   }
 }
+@media (max-width: 768px) {
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-brand img {
+    /* margin-left: 10px!important; */
+      width: 50px;  
+      height: auto;
+      text-align: center;
+      display: flex;
+  }
+  .navbar-brand .company-name{
+    font-size: 1.6rem;
+    margin-left: 10px;
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+    }
+    @media (min-width: 991px) and (max-width: 1199px) {
+
+      .navbar{
+        display: flex;
+        align-items: center;
+
+      }
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-size: 19px;
+      
+      }
+      .navbar-brand img{
+        width: 70px;  
+      }
+      .nav-item{
+        font-size: 14px;
+        padding: 0 2px;
+      }
+    }
+    
