@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $query = "INSERT INTO appointments (vehicle_number, vehicle_type, date, time, service_station, services)
+        $query = "INSERT INTO appointments (vehicleNumber, vehicleType, date, time, serviceStation, servicesString)
                   VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $con->prepare($query);
 
