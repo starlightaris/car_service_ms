@@ -2,9 +2,14 @@ html, body {
    
     margin: 0;
     padding: 0;
-    background-image: url("../images/reg.jpg");
+    /* background-image: url("../images/reg.jpg"); */
+    background-color: #f4f4f4;
+    background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.4)!important;
 }
 form {
     max-width: 600px;

@@ -5,7 +5,7 @@ function doValidate() {
     let date = document.forms["appointmentForm"]["date"].value;
     let time = document.forms["appointmentForm"]["time"].value;
     let serviceStation = document.forms["appointmentForm"]["serviceStation"].value;
-    let services = document.querySelectorAll('input[name="service"]:checked');
+    let services = document.querySelectorAll("input[name='service[]']:checked");
 
     // Validate Vehicle Number (e.g., ABC-1234)
     let vehicleNumberPattern = /^[A-Za-z]{2,3}-\d{4}$/;
@@ -41,6 +41,7 @@ function doValidate() {
     // Validate Services (at least one service must be selected)
     if (services.length === 0) {
         alert("Please select at least one service.");
+       
         return false;
     }
 

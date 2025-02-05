@@ -151,6 +151,7 @@ if (isset($_POST['btncancel'])) {
 
                         <div class="form-box">
                             <form name="myform" id="myform" onsubmit="return telValidate()" method="POST" action="">
+                            <!--update successfull message-->
                                 <?php
                                 if (isset($message)) {
                                     foreach ($message as $message) {
@@ -217,13 +218,13 @@ if (isset($_POST['btncancel'])) {
                                 </div>
                             
                             <!--enabling update btn whn input field is chnged-->
-                              <script>
+                            <script>
                             const inputs = document.querySelectorAll(".input-field");
                             const updateBtn = document.getElementById("btnupdate");
                             const form = document.getElementById("myForm");
 
                                             
-                              inputs.forEach((input) => {
+                            inputs.forEach((input) => {
                             input.addEventListener("input", () => {
                                 updateBtn.disabled = false; 
                             });
