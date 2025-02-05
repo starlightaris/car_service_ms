@@ -46,8 +46,6 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -61,7 +59,7 @@ if (isset($_POST['submit'])) {
     <!-- Custom js Validation -->
     <script src="js/Validate-register.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style-register.css">
+    <link rel="stylesheet" href="css/style-register-appointment.css">
     <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
     <!-- Custom Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,8 +68,6 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-
-
     <!--Header-->
     <div id="header"></div>
     <?php

@@ -30,7 +30,7 @@ body {
     margin: 150px auto 50px;
 }
 
-.input-field {
+.input-field, #txtboxes {
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 20px;
@@ -39,7 +39,7 @@ body {
     background:rgba(255,255,255,0.3);
 }
 
-.input-field:focus {
+.input-field:focus, #txtboxes:focus {
     /*border-color: #007bff;*/
     color: black;
     outline: none;
@@ -51,7 +51,6 @@ body {
     display: none;
     margin-top: 2px;
 }
-
 
 .error-message{
         color: red;
@@ -92,6 +91,8 @@ body {
 }
 
 label{
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
