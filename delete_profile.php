@@ -18,7 +18,7 @@ $user_email = $_SESSION['userId'];
         $message[] = 'Account deleted successfully.';
         session_unset(); // Clear session
         session_destroy(); // Destroy session
-        header("Location: register.php");
+         header("Location: register.php");
         
     } 
 
@@ -32,12 +32,12 @@ $user_email = $_SESSION['userId'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
     
             <script>
             $(document).ready(function() {
                 setTimeout(() => {
-                $('#alertBox').each(function() {
+                $('#alertBox').each(function() {    
                     bootstrap.Alert.getOrCreateInstance(this).close();
                 });
                 }, 3000);

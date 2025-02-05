@@ -30,7 +30,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
 
       <!--sidebar Header -->
       <div class="offcanvas-header text-white border-bottom">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Kavinda Auto Engineering</h5>
+        <h5 class="offcanvas-title" style="font-family: Bebas Neue, serif; font-style:italic;" id="offcanvasNavbarLabel">Kavinda Auto Engineering</h5>
         <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
