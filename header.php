@@ -30,7 +30,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
 
       <!--sidebar Header -->
       <div class="offcanvas-header text-white border-bottom">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Kavinda Auto Engineering</h5>
         <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
@@ -70,6 +70,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
               ?>
 
               <!-- Profile Dropdown -->
+            <div class="d-flex justify-content-end align-items-baseline ms-auto gap-3">
               <li class="nav-item dropdown ">
 
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -113,6 +114,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
                 echo '<a href="login.php" class="text-white text-decoration-none px-3 py-2 rounded-2 bg-danger" style="background-color:red;font-size:15px;">Book Now</a>';
               }
               ?>
+              </div>
             </div>
           </div>
       </div>

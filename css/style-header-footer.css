@@ -75,7 +75,8 @@ width: 100%;
   width: 100% !important;
   max-width: 100% !important;
   height: 100vh !important;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6)!important;
+
   /* Dark transparent background */
   /* backdrop-filter: blur(10px); */
 }
@@ -364,4 +365,28 @@ footer a i {
         padding: 0 2px;
       }
     }
-    
+    @media (min-width: 991px) and (max-width: 1399px) {
+      .navbar{
+        display: flex;
+        align-items: center;
+
+      }
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-size: 19px;
+      
+      }
+      .navbar-brand img{
+        width: 70px;  
+      }
+      .nav-item img {
+       width:25px;
+       height:25px;
+    }
+      .nav-item{
+        font-size: 14px;
+        padding: 0 2px;
+      } 
+     
+    }
