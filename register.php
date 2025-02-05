@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <div class="form mx-auto">
             <div class="top text-center mb-4">
-                <header class="h3 text-white">Register</header>
+                <header class="h3 text-dark">Register</header>
             </div>
             <div id="alertBox1" class="alert alert-danger mt-2 d-none" role="alert">
                 Please enter a valid email address.

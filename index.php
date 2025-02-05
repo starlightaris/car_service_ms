@@ -48,8 +48,7 @@
         <img src="images/car-servicing-hero.jpg" class="d-block w-100" alt="Car Service">
         <div class="carousel-caption">
           <h3>Engine Repair</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolorae.</p>
+          <p>Our expert technicians provide reliable engine repairs to keep your car in top condition.</p>
         </div>
       </div>
 
@@ -57,8 +56,7 @@
         <img src="images/brake-hero.jpg" class="d-block w-100" alt="Brake Pads Service">
         <div class="carousel-caption">
           <h3>Brake Service</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.</p>
+          <p>Ensure your safety with professional brake services.</p>
         </div>
       </div>
 
@@ -66,7 +64,7 @@
         <img src="images/oil-change-hero.jpg" class="d-block w-100" alt="Oil Change Service">
         <div class="carousel-caption">
           <h3>Oil Changes</h3>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Keep your engine running smoothly with regular oil changes.</p>
         </div>
       </div>
 
@@ -74,8 +72,7 @@
         <img src="images/wheel-alignment-hero.png" class="d-block w-100" alt="Wheel Alignment Service">
         <div class="carousel-caption">
           <h3>Wheel Alignment</h3>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.</p>
+          <p>Proper wheel alignment ensures your tires wear evenly and your vehicle drives smoothly.</p>
         </div>
       </div>
     </div>
