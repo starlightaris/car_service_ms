@@ -111,11 +111,11 @@ if (isset($_POST['btnsubmit'])) {
                 <div class="col-12">
                     <div class="form-group">
 
-                        <input type="submit" class="btn btn-primary w-100 submit" name="btnsubmit" value="Login">
+                        <input type="submit" class="btn btn-light w-50  d-block mx-auto submit" name="btnsubmit" value="Login">
                     </div>
                 </div>
             </div>
-            <div class="row g-3 text-secondary">
+            <div class="row g-3" style="color:grey;">
                 <center>Don't have an account? <a href="register.php">Register</a></center>
             </div>
         </form>

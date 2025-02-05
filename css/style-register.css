@@ -21,9 +21,9 @@ body {
     width: 100%;
     padding: 30px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin: 180px auto 50px;
+    margin: 150px auto 50px;
 }
 
 
@@ -42,7 +42,7 @@ body {
 
 .input-field:focus {
     /*border-color: #007bff;*/
-    color: white;
+    color: black;
     outline: none;
     background:rgba(255,255,255,0.3);
 }

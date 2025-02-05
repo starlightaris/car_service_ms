@@ -21,9 +21,9 @@ body {
     width: 100%;
     padding: 30px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin: 180px auto 50px;
+    margin: 180px auto 100px;
 }
 
 .input-field {
@@ -66,7 +66,10 @@ body {
 
 @media screen and (max-width: 768px) {
     .form {
-        margin: 100px;
+        margin-top:200px;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* margin: 100px; */
         padding: 20px;
     }
 
@@ -81,8 +84,13 @@ body {
 
 @media (max-width: 150px) {
     .form {
+        margin-top:200px;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* margin: 100px; */
+        padding: 20px;
         box-shadow: none;
-        margin: 10px;
-        padding: 15px;
+        /* margin: 10px;
+        padding: 15px; */
     }
 }
