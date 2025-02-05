@@ -14,7 +14,7 @@ function doValidate(){
 
     //pasword validation 
     var pw=document.forms["myform"]["txtpw"].value;
-    var regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    var regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&/*+.])[A-Za-z\d@$!%*?&/*+.]{8,}$/;
     var passwordError1 = document.getElementById("passwordError1");
     var passwordError2 = document.getElementById("passwordError2");
     

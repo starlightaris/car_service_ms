@@ -63,6 +63,7 @@ if (isset($_POST['btnsubmit'])) {
     <!-- <a href="javascript:window.history.back()" class="back-arrow">
             &larr;
         </a> -->
+    <div class="container">
     <div class="form mx-auto">
         <div class="top text-center mb-4">
             <header class="h3">Login</header>
@@ -85,7 +86,7 @@ if (isset($_POST['btnsubmit'])) {
                     <div class="form-group">
 
                         <input type="email" name="txtemail" class="form-control input-field" placeholder="Email"
-                            required value="<?php echo isset($fname) ? $fname : ''; ?>">
+                            required value="<?php echo isset($email) ? $email : ''; ?>">
 
                     </div>
                 </div>
@@ -102,11 +103,11 @@ if (isset($_POST['btnsubmit'])) {
                     </div>
                 </div>
             </div>
-            <div class="row g-3">
+            <!-- <div class="row g-3">
                 <small id="passwordError" class="error-text">Password must have at least 8 characters, 1
                     uppercase, 1 lowercase, 1 number, and 1 special character.</small>
 
-            </div>
+            </div> -->
             <div class="row g-3">
                 <div class="col-12">
                     <div class="form-group">
@@ -119,6 +120,7 @@ if (isset($_POST['btnsubmit'])) {
                 <center>Don't have an account? <a href="register.php">Register</a></center>
             </div>
         </form>
+    </div>
     </div>
 
     <!-- nav-scroll frosted glass effect -->
