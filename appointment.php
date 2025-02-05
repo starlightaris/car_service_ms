@@ -33,9 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Execute the statement
             if ($stmt->execute()) {
-                echo "<script>alert('Appointment booked successfully!');</script>";
+                // echo "<script>alert('Appointment booked successfully!');</script>";
+                // header('location:login.php');
 
-                header('location:login.php');
+                echo "<script>
+                      document.addEventListener('DOMContentLoaded', function() {
+                          var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+                          confirmationModal.show();
+                      });
+                      </script>";
+
             } else {
                 $errors[] = "Error: " . $stmt->error;
             }
@@ -194,6 +201,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
     </div>
+
+    <!-- Appointment Confirmed Message -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Appointment Confirmed</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your appointment has been successfully placed! We'll get back to you shortly.
+                </div>
+                <div class="modal-footer">
+                    <a href="index.php" class="btn btn-primary">Return Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Validation -->
     <script src="js/validate-appointment.js"></script>
 
