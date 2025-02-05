@@ -116,11 +116,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="serviceStation">Service Station</label>
             <select id="txtboxes" name="serviceStation" required>
                 <option value="">Choose Station</option>
-                <option value="kottawa" <?php echo ($serviceStation === 'kottawa') ? 'selected' : ''; ?>>Kottawa</option>
-                <option value="koswatta" <?php echo ($serviceStation === 'koswatta') ? 'selected' : ''; ?>>Koswatta
+                <option value="Gampola" <?php echo ($serviceStation === 'Gampola') ? 'selected' : ''; ?>>Gampola</option>
+                <option value="Panadura" <?php echo ($serviceStation === 'Panadura') ? 'selected' : ''; ?>>Panadura
                 </option>
-                <option value="battaramulla" <?php echo ($serviceStation === 'battaramulla') ? 'selected' : ''; ?>>
-                    Battaramulla</option>
+                <option value="Kandy" <?php echo ($serviceStation === 'Kandy') ? 'selected' : ''; ?>>
+                    Kandy</option>
             </select>
         </div>
         <div class="form-group">

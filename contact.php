@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 
-    <div class="container mt-5 p-5 shadow">
+    <div class="container mt-5 mb-5 p-5 shadow">
         <div class="row">
             <!-- Contact Information -->
             <div class="col-md-6">
