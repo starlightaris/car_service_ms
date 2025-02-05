@@ -22,10 +22,21 @@
   transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
-.navbar-brand {
-  margin-right: 90px;
+.navbar-brand .logo{
+
+  margin-left: 5px;
+
 }
 
+.navbar-brand img {
+  width: 100px;
+  height: 60px;
+  margin-left: 0px;
+ 
+}
+.navbar-nav li{
+ margin-left: 5px;
+}
 /* .offcanvas-body ul {
 display: flex;
 justify-content: center;
@@ -109,6 +120,7 @@ footer a i {
 }
 
 .navbar-brand {
+  margin-left: 5px;
     margin-right: auto;
     font-size: 1.2rem;
 }

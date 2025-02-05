@@ -20,7 +20,9 @@ body, html {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin: 50px auto;
+    /* margin: 50px auto; */
+    margin-top:150px;
+    margin-bottom:50px;
 }
 
 
@@ -69,7 +71,7 @@ body, html {
 
 @media (max-width: 768px) {
     .form {
-        margin: 20px;
+        margin: 100px;
         padding: 20px;
     }
     
