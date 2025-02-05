@@ -1,23 +1,16 @@
 body, html {
     height: 100%;
-    align-items: center;
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-   
+    margin: 0;
+    padding: 0;
 }
 
-/* 
 body {
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-
+    background-image: url("../images/login-back.jpg");
+    background-size: cover; /* Ensures the image covers the full screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-attachment: fixed; /* Keeps background fixed when scrolling */
+}
 
 .row {
     margin: 10px;
@@ -28,11 +21,9 @@ body {
     width: 100%;
     padding: 30px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0.6);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    /* margin: 50px auto; */
-    margin-top:150px;
-    margin-bottom:50px;
+    margin: 180px auto 50px;
 }
 
 .input-field {
@@ -88,9 +79,10 @@ body {
     }
 }
 
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
+@media (max-width: 150px) {
+    .form {
+        box-shadow: none;
+        margin: 10px;
+        padding: 15px;
     }
 }
