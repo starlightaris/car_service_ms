@@ -219,7 +219,7 @@
         <div class="card-body">
           <h5 class="card-title">5 Tips for Maintaining Your Car</h5>
           <p class="card-text">Learn how to keep your car in top condition with these simple tips.</p>
-          <a href="#" class="btn btn-outline-primary">Read More</a>
+          <a href="https://www.caranddriver.com/shopping-advice/a35782575/car-ownership-maintenance-repairs-detailing-car-care/" target="_blank" class="btn btn-outline-primary">Read More</a>
         </div>
       </div>
 
@@ -229,7 +229,7 @@
         <div class="card-body">
           <h5 class="card-title">Preparing Your Car for Winter</h5>
           <p class="card-text">Get your car ready for the cold season with these essential tips.</p>
-          <a href="#" class="btn btn-outline-primary">Read More</a>
+          <a href="https://www.nhtsa.gov/winter-driving-tips" target="_blank" class="btn btn-outline-primary">Read More</a>
         </div>
       </div>
 
@@ -239,7 +239,7 @@
         <div class="card-body">
           <h5 class="card-title">How to Improve Fuel Efficiency</h5>
           <p class="card-text">Save money on fuel with these easy-to-follow tips.</p>
-          <a href="#" class="btn btn-outline-primary">Read More</a>
+          <a href="https://motorway.co.uk/sell-my-car/guides/top-10-tips-for-improving-fuel-efficiency" target="_blank" class="btn btn-outline-primary">Read More</a>
         </div>
       </div>
     </div>
