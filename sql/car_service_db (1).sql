@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2025 at 05:17 PM
+-- Generation Time: Feb 05, 2025 at 04:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `car_service_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appointments`
+--
+
+CREATE TABLE `appointments` (
+  `id` int(11) NOT NULL,
+  `vehicleNumber` varchar(20) NOT NULL,
+  `vehicleType` varchar(50) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `serviceStation` varchar(50) NOT NULL,
+  `servicesString` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`id`, `vehicleNumber`, `vehicleType`, `date`, `time`, `serviceStation`, `servicesString`) VALUES
+(1, 'CBE-3143', 'car', '2025-02-09', '22:54:00', 'Panadura', 'interiorCleaning, radiatorCoolantChange'),
+(2, 'CBE-3143', 'car', '2025-02-09', '22:54:00', 'Panadura', 'oilFilterChange, interiorCleaning, radiatorCoolantChange'),
+(3, 'CBE-3143', 'suv', '2025-02-21', '22:58:00', 'Gampola', 'fullService'),
+(4, 'CBE-3143', 'suv', '2025-02-22', '23:08:00', 'Gampola', 'totalTreatment, radiatorCoolantChange'),
+(5, 'CBE-3143', 'car', '2025-02-21', '12:41:00', 'Gampola', 'exteriorCutPolish, radiatorCoolantChange, brakeOilChange'),
+(6, 'CBE-3143', 'car', '2025-02-14', '12:54:00', 'Gampola', 'exteriorCutPolish, totalTreatment');
 
 -- --------------------------------------------------------
 
@@ -49,7 +77,11 @@ INSERT INTO `contact` (`messageId`, `message`, `firstName`, `lastName`, `email`,
 (6, 'mnk', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '070431353'),
 (7, 'mnk', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '0704313'),
 (8, 'kjol', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '070431353'),
-(9, 'hnik', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '07043135');
+(9, 'hnik', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '07043135'),
+(10, 'cnaK', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '0704313535'),
+(11, 'fwefcdfqe', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '0704313535'),
+(12, 'hiiiiiiiiii', 'binithi', 'elvitigala', 'wjpq8454@outlook.com', '0704313535'),
+(13, 'bj', 'binithi', 'elvitigala', 'binithi.vihanga@gmail.com', '0704313535');
 
 -- --------------------------------------------------------
 
@@ -72,8 +104,8 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`customerId`, `firstName`, `lastName`, `email`, `phone`, `userId`) VALUES
 (1, 'Binithi', 'Elvitigala', 'binithi.vihanga@gmail.com', '0704313535', 1),
-(3, 'binithi', 'elvitigala', 'sethu@gmail.com', '0704313538', 3),
-(4, 'binithi', 'elvitigala', 'dantha@gmail.com', '0704313535', 4);
+(4, 'binithi', 'elvitigala', 'dantha@gmail.com', '0704313535', 4),
+(19, 'fcwq', 'vqe', 'binie2@efjiw.com', '0704313535', 19);
 
 -- --------------------------------------------------------
 
@@ -93,12 +125,18 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`userId`, `username`, `password`) VALUES
 (1, 'binithi.vihanga@gmail.com', 'biniEl2*'),
-(3, 'sethu@gmail.com', 'sethuEl2*'),
-(4, 'dantha@gmail.com', 'danE@123');
+(4, 'dantha@gmail.com', 'danE@123'),
+(19, 'binie2@efjiw.com', 'BINeI856@/+');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `appointments`
+--
+ALTER TABLE `appointments`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contact`
@@ -124,22 +162,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `appointments`
+--
+ALTER TABLE `appointments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `messageId` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `messageId` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customerId` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `customerId` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userId` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `userId` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
