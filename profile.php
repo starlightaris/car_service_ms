@@ -7,7 +7,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 $user_email = $_SESSION['userId'];
-// $user_email="binithi.vihanga@gmail.com";
+
+//$user_email="binithi.vihanga@gmail.com";
 
 $sql = "SELECT firstName,lastName,email,phone FROM customer INNER JOIN user ON customer.userId=user.userId WHERE username='$user_email'";
 $result = mysqli_query($con, $sql);
@@ -244,7 +245,7 @@ if (isset($_POST['btncancel'])) {
     </div>
 
     <!-- nav-scroll frosted glass effect -->
-    <script src="js/navbar-scroll.js"></script>
+    <script src="js/navbar-scroll.js"></script> 
 
     <!-- Footer -->
     <div id="footer">

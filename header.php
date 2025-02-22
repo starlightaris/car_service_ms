@@ -83,6 +83,8 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
                   <form id="dltform" action="delete_profile.php" method="POST" style="display: none;">
                   </form>
 
+                  <li><a class="dropdown-item" href="vehicle.php">Vehicle Details</a></li>
+
                   <li><a class="dropdown-item text-danger" href="javascript:void(0);" onclick="confirmDelete()">Delete
                       Profile</a></li>
                   <script>

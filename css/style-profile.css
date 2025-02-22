@@ -27,7 +27,7 @@ html *{
     height: 380px;
     background-position:center;
     /* background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%); */
-     background-image:url('../images/wall2.jpg');
+    background-image:url('../images/wall2.jpg');
      /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%);*/
 } 
 

@@ -1,0 +1,12 @@
+GROUP 17 - Car Service Website(Kavinda Auto Engineering)
+
+Group Members 				: CODSE241F-023
+					  CODSE241F-042
+                  			  CODSE241F-074
+					  CODSE241F-137
+					  CODSE241F-091
+
+
+git repository link 			: https://github.com/starlightaris/car_service_ms.git
+site URL (using infinityFree)		: http://kae.ct.ws/
+
