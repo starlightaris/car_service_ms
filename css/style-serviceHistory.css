@@ -1,0 +1,42 @@
+
+.container {
+    
+    height: 100%;
+}
+.table-responsive {
+    max-height: 400px; /* Makes it scrollable */
+    overflow-y: auto;
+}
+
+.filter-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+ .navbar{
+background-color: rgba(0, 0, 0, 0.3)!important;
+
+} 
+
+
+    body {
+        /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/login-back.jpg"); */
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+        background-color: white;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+
+    }
+   
