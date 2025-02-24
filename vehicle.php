@@ -88,7 +88,7 @@ if(isset($_POST['delete'])){
         $row = mysqli_fetch_assoc($result1);
         $customerId = $row['customerId'];
         
-         $sql3="DELETE FROM vehicle WHERE customerId='$customerId' AND plateNumber='$plateNumber'";
+         $sql3="UPDATE vehicle SET deleted_flag=TRUE WHERE  customerId='$customerId' AND plateNumber='$plateNumber'";
          $result3=mysqli_query($con,$sql3);
      
 
@@ -181,7 +181,7 @@ if(isset($_POST['delete'])){
            $customerId = $row['customerId'];
        }
 //dispayng vehicle details
-    $sql3="SELECT plateNumber,brand,model,fuelType,manufacturedYear FROM vehicle WHERE customerId='$customerId'";
+    $sql3="SELECT plateNumber,brand,model,fuelType,manufacturedYear FROM vehicle WHERE customerId='$customerId' AND deleted_flag=FALSE";
     $result3=mysqli_query($con,$sql3);
     if (mysqli_num_rows($result3) > 0) {
         while ($row = mysqli_fetch_assoc($result3)) {

@@ -9,9 +9,9 @@ $user_email = $_SESSION['userId'];
 
 
 
-    $sql="DELETE FROM customer WHERE email='$user_email'";
+    $sql="UPDATE customer SET deleted_flag=TRUE WHERE email='$user_email'";
     $result=mysqli_query($con,$sql);
-    $sql2="DELETE FROM user WHERE username='$user_email'";
+    $sql2="UPDATE user SET deleted_flag=TRUE WHERE username='$user_email'";
     $result2=mysqli_query($con,$sql2);
 
     if ($result && $result2) {

@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     } else {
 
 
-        $sql1 = "INSERT INTO user (username,password) VALUES ('$email','$pw')";
+        $sql1 = "INSERT INTO user (username,password,role) VALUES ('$email','$pw','customer')";
         $result1 = mysqli_query($con, $sql1);
 
         $userId = mysqli_insert_id($con);
