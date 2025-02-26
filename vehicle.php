@@ -102,13 +102,7 @@ if(isset($_POST['delete'])){
 
     }
 }
-
-
-
-
 ?>
-
-
 
 
 <!-- vehicle_form.html -->

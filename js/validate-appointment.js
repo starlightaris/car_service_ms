@@ -1,50 +1,71 @@
-function doValidate() {
-    // Get form values
-    let vehicleNumber = document.forms["appointmentForm"]["vehicleNumber"].value;
-    let vehicleType = document.forms["appointmentForm"]["vehicleType"].value;
-    let date = document.forms["appointmentForm"]["date"].value;
-    let time = document.forms["appointmentForm"]["time"].value;
-    let serviceStation = document.forms["appointmentForm"]["serviceStation"].value;
-    let services = document.querySelectorAll("input[name='service[]']:checked");
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("appointmentForm");
+    const vehicleSelect = document.querySelector("select[name='vehicleId']");
+    const timeSelect = document.querySelector("select[name='time']");
+    const serviceCheckboxes = document.querySelectorAll("input[name='service[]']");
+    const vehicleError = document.getElementById("vehicleError");
+    const dateError = document.getElementById("dateError");
+    const timeError = document.getElementById("timeError");
+    const servicesError = document.getElementById("servicesError");
 
-    // Validate Vehicle Number (e.g., ABC-1234)
-    let vehicleNumberPattern = /^[A-Za-z]{2,3}-\d{4}$/;
-    if (!vehicleNumberPattern.test(vehicleNumber)) {
-        alert("Please enter a valid vehicle number (e.g., ABC-1234).");
-        return false;
-    }
+    form.addEventListener("submit", function (event) {
+        let isValid = true;
 
-    // Validate Vehicle Type
-    if (vehicleType === "Select Vehicle Type") {
-        alert("Please select a vehicle type.");
-        return false;
-    }
+        // Reset error messages
+        vehicleError.style.display = "none";
+        dateError.style.display = "none";
+        timeError.style.display = "none";
+        servicesError.style.display = "none";
 
-    // Validate Date
-    if (date === "") {
-        alert("Please select a date.");
-        return false;
-    }
+        // Validate Vehicle Selection
+        if (vehicleSelect.value === "") {
+            vehicleError.style.display = "block";
+            isValid = false;
+        }
 
-    // Validate Time
-    if (time === "") {
-        alert("Please select a time.");
-        return false;
-    }
+        // Validate Date (should be today or future)
+        const dateInput = document.querySelector("input[name='date']");
+        const today = new Date().toISOString().split("T")[0];
+        if (dateInput.value === "" || dateInput.value < today) {
+            dateError.style.display = "block";
+            isValid = false;
+        }
 
-    // Validate Service Station
-    if (serviceStation === "") {
-        alert("Please select a service station.");
-        return false;
-    }
+        // Validate Time Selection
+        if (timeSelect.value === "") {
+            timeError.style.display = "block";
+            isValid = false;
+        }
 
-    // Validate Services (at least one service must be selected)
-    if (services.length === 0) {
-        alert("Please select at least one service.");
-       
-        return false;
-    }
+        // Validate at least one service is selected
+        let serviceSelected = false;
+        serviceCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                serviceSelected = true;
+            }
+        });
 
-    // If all validations pass, allow form submission
-    return true;
-}
+        if (!serviceSelected) {
+            servicesError.style.display = "block";
+            isValid = false;
+        }
+
+        // Prevent form submission if validation fails
+        if (!isValid) {
+            event.preventDefault();  // Prevents the form from refreshing
+        }
+    });
+
+    // Prevent reselecting "Select Vehicle" or "Select Time"
+    vehicleSelect.addEventListener("change", function () {
+        if (this.value !== "") {
+            this.querySelector("option[value='']").disabled = true;
+        }
+    });
+
+    timeSelect.addEventListener("change", function () {
+        if (this.value !== "") {
+            this.querySelector("option[value='']").disabled = true;
+        }
+    });
+});
