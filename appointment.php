@@ -190,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="form-group">
                     <div class="row mb-3">
                         <label>Time</label>
-                        <select id="txtboxes" name="time" class="input-field" required>
+                        <select id="timeSelect" name="time" id="" class="input-field" required>
                             <option value="">Select Time</option>
                             <option value="10:00">10:00 AM</option>
                             <option value="12:00">12:00 PM</option>

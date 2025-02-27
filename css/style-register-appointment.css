@@ -104,3 +104,8 @@ label.form-check-label{
     margin: auto;
     align-items:center;
 }
+
+select#timeSelect option:disabled {
+    color: gray;
+    font-style: italic;
+}

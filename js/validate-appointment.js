@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateError = document.getElementById("dateError");
     const timeError = document.getElementById("timeError");
     const servicesError = document.getElementById("servicesError");
+    const dateInput = document.querySelector("input[name='date']");
 
     form.addEventListener("submit", function (event) {
         let isValid = true;
@@ -24,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Validate Date (should be today or future)
-        const dateInput = document.querySelector("input[name='date']");
         const today = new Date().toISOString().split("T")[0];
         if (dateInput.value === "" || dateInput.value < today) {
             dateError.style.display = "block";
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Prevent form submission if validation fails
         if (!isValid) {
-            event.preventDefault();  // Prevents the form from refreshing
+            event.preventDefault();
         }
     });
 
@@ -68,4 +68,35 @@ document.addEventListener("DOMContentLoaded", function () {
             this.querySelector("option[value='']").disabled = true;
         }
     });
+
+    // Fetch and disable booked time slots when a date is selected
+    document.addEventListener("DOMContentLoaded", function () {
+        const dateInput = document.querySelector("input[name='date']");
+        const timeSelect = document.querySelector("select[name='time']");
+
+        dateInput.addEventListener("change", function () {
+            const selectedDate = dateInput.value;
+
+            if (selectedDate) {
+                fetch(`get_reserved_slots.php?date=${selectedDate}`)
+                    .then(response => response.json())
+                    .then(bookedTimes => {
+                        // Enable all time slots first
+                        timeSelect.querySelectorAll("option").forEach(option => {
+                            option.disabled = false; // Re-enable all options first
+                        });
+
+                        // Disable booked time slots
+                        bookedTimes.forEach(bookedTime => {
+                            const optionToDisable = timeSelect.querySelector(`option[value='${bookedTime}']`);
+                            if (optionToDisable) {
+                                optionToDisable.disabled = true;
+                            }
+                        });
+                    })
+                    .catch(error => console.error("Error fetching reserved slots:", error));
+            }
+        });
+    });
+
 });
