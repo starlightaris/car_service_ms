@@ -17,6 +17,16 @@ if (isset($_POST['btnsubmit'])) {
         $row = mysqli_fetch_assoc($select);
         $_SESSION['userId'] = $row["username"];
 
+        $sql = "SELECT COUNT(*) AS count FROM vehicle INNER JOIN customer ON customer.customerId = vehicle.customerId  WHERE customer.email = '$email'";
+
+        $result = mysqli_query($con, $sql);
+        $row = mysqli_fetch_assoc($result);
+
+        if ($row['count'] == 0) {
+            header("Location: addVehicle.php"); 
+            exit(); 
+        }
+                
         header('location:index.php');
     } else {
         $message[] = 'Incorrect email or password!';
