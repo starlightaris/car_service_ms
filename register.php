@@ -109,16 +109,13 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="row g-3">
                     <small id="emailError" class="error-text"> Please enter a valid email address.</small>
-
                     <?php
-
                     if (isset($error_message)) {
                         foreach ($error_message as $error_message) {
                             echo '<div class="error-message">' . $error_message . '</div>';
                         }
                     }
                     ?>
-
                 </div>
 
                 <div class="row g-3">

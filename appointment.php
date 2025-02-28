@@ -11,6 +11,7 @@ $vehicleId = $date = $time = $description = '';
 $service = [];
 $errors = [];
 $success_message = [];
+$bookedTimes = [];
 
 //Fetching customer vehicles from db
 $customerVehicles = [];
@@ -34,25 +35,29 @@ if (isset($user_email)) {
         while ($row2 = mysqli_fetch_assoc($result2)) {
             $customerVehicles[] = $row2;
         }
-
     }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $vehicleId = $_POST['vehicleId'] ?? '';
+    $date = $_POST['date'] ?? '';
+    $time = $_POST['time'] ?? '';
+    $description = $_POST['description'] ?? '';
 
-    $vehicleId = $_POST['vehicleId'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
-    $description = $_POST['description'];
+    // Fetch booked time slots if a date is selected
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['date'])) {
+        $selectedDate = $_POST['date'];
+        $sqlBooked = "SELECT time FROM appointment WHERE date = '$selectedDate'";
+        $resultBooked = mysqli_query($con, $sqlBooked);
 
-    // Define valid time slots
-    $validTimeSlots = ['10:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
-
-    // Validate time
-    if (!in_array($time, $validTimeSlots)) {
-        $errors[] = "Please select a valid time slot.";
+        if ($resultBooked) {
+            while ($row = mysqli_fetch_assoc($resultBooked)) {
+                $bookedTimes[] = $row['time'];
+            }
+        }
+    } else {
+        $bookedTimes = []; // Initialize as empty array if no date is selected
     }
-
 
     // Validate service checkboxes
     if (isset($_POST['service']) && is_array($_POST['service'])) {
@@ -62,60 +67,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $query = "INSERT INTO appointment (date, time, appointmentStatus, description, vehicleId, customerId)
+
+        // Validate that the vehicleId exists in the vehicle table
+        $sqlValidateVehicle = "SELECT vehicleId FROM vehicle WHERE vehicleId = ? AND customerId = ?";
+        $stmtValidate = $con->prepare($sqlValidateVehicle);
+        $stmtValidate->bind_param("ii", $vehicleId, $customerId);
+        $stmtValidate->execute();
+        $stmtValidate->store_result();
+
+        if ($stmtValidate->num_rows === 0) {
+            $errors[] = "Invalid vehicle selected. Please choose a valid vehicle.";
+        } else {
+            $query = "INSERT INTO appointment (date, time, appointmentStatus, description, vehicleId, customerId)
                   VALUES (?, ?, 'Pending', ?, ?, ?)";
-        $stmt = $con->prepare($query);
+            $stmt = $con->prepare($query);
 
-        if ($stmt) {
-            // Bind parameters
-            $stmt->bind_param("sssii", $date, $time, $description, $vehicleId, $customerId);
+            if ($stmt) {
+                // Bind parameters
+                $stmt->bind_param("sssii", $date, $time, $description, $vehicleId, $customerId);
 
-            // Execute the statement
-            if ($stmt->execute()) {
-                $appointmentId = $stmt->insert_id; // Get the ID of the newly inserted appointment
+                // Execute the statement
+                if ($stmt->execute()) {
+                    $appointmentId = $stmt->insert_id; // Get the ID of the newly inserted appointment
 
-                // Insert selected services into the appointment_service table
-                foreach ($service as $serviceId) {
-                    $query2 = "INSERT INTO appointment_service (appointmentId, serviceId) VALUES (?, ?)";
-                    $stmt2 = $con->prepare($query2);
-                    $stmt2->bind_param("ii", $appointmentId, $serviceId);
-                    $stmt2->execute();
-                    $stmt2->close();
-                }
+                    // Insert selected services into the appointment_service table
+                    foreach ($service as $serviceId) {
+                        $query2 = "INSERT INTO appointment_service (appointmentId, serviceId) VALUES (?, ?)";
+                        $stmt2 = $con->prepare($query2);
+                        $stmt2->bind_param("ii", $appointmentId, $serviceId);
+                        $stmt2->execute();
+                        $stmt2->close();
+                    }
 
-                $success_message[] = "Appointment booked successfully!";
-                echo "<script>
+                    $success_message[] = "Appointment booked successfully!";
+                    echo "<script>
                       document.addEventListener('DOMContentLoaded', function() {
                           var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
                           confirmationModal.show();
                       });
                       </script>";
+                } else {
+                    $errors[] = "Error: " . $stmt->error;
+                }
+
+                // Close the statement
+                $stmt->close();
             } else {
-                $errors[] = "Error: " . $stmt->error;
+                $errors[] = "Error: " . $con->error;
             }
-
-            // Close the statement
-            $stmt->close();
-        } else {
-            $errors[] = "Error: " . $con->error;
         }
-    }
-
-    // Display errors (if any)
-    if (!empty($errors)) {
-        foreach ($errors as $error) {
-            //echo "<script>alert('$error');</script>";
-        }
-    }
-
-    // Display success messages (if any)
-    if (!empty($success_message)) {
-        foreach ($success_message as $message) {
-            //echo "<script>alert('$message');</script>";
-        }
+        $stmtValidate->close();
     }
 }
-
 ?>
 
 
@@ -153,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="top text-center mb-4">
                 <header class="h3 text-dark">Book an Appointment</header>
             </div>
-            <form id="appointmentForm" name="appointmentForm" onsubmit="" method="POST">
+            <form id="appointmentForm" name="appointmentForm" onsubmit="return doValidate()" method="POST" novalidate>
                 <!-- Select Vehicle (Dropdown) -->
                 <div class="form-group">
                     <div class="row mb-3">
@@ -171,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             }
                             ?>
                         </select>
-                            <small id="vehicleError" class="error-text">Please select a vehicle.</small>
+                        <small id="vehicleError" class="error-text">Please select a vehicle.</small>
                     </div>
                 </div>
 
@@ -186,21 +189,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
 
-                <!-- Time Dropdown -->
+                <!-- Time (Buttons) DYNAMIC -->
                 <div class="form-group">
                     <div class="row mb-3">
                         <label>Time</label>
-                        <select id="txtboxes" name="time" class="input-field" required>
-                            <option value="">Select Time</option>
-                            <option value="10:00">10:00 AM</option>
-                            <option value="12:00">12:00 PM</option>
-                            <option value="13:00">01:00 PM</option>
-                            <option value="14:00">02:00 PM</option>
-                            <option value="15:00">03:00 PM</option>
-                            <option value="16:00">04:00 PM</option>
-                            <option value="17:00">05:00 PM</option>
-                            <option value="18:00">06:00 PM</option>
-                        </select>
+                        <div class="time-slot-container">
+                            <?php
+                            $validTimeSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+                            foreach ($validTimeSlots as $slot) {
+                                $isBooked = in_array($slot, $bookedTimes);
+                                echo "<button type='button' name='time' class='timeSelect" . ($isBooked ? ' disabled' : '') . "'"
+                                    . ($isBooked ? ' disabled' : '') . ">$slot</button>";
+                            }
+                            ?>
+                        </div>
+                        <input type="hidden" name="time" id="selectedTime">
                         <small id="timeError" class="error-text">Please select a valid time slot.</small>
                     </div>
                 </div>
@@ -265,6 +268,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Validation -->
     <script src="js/validate-appointment.js"></script>
+
+    <!-- Pass bookedTimes from PHP to JavaScript -->
+    <script>
+        const bookedTimes = <?php echo json_encode($bookedTimes); ?>;
+        console.log("Booked Times:", bookedTimes); // Debugging: Check the booked times
+    </script>
 
     <!-- nav-scroll frosted glass effect -->
     <script src="js/navbar-scroll.js"></script>
