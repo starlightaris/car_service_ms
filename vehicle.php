@@ -240,7 +240,7 @@ if(isset($_POST['delete'])){
   
 
         <label for="plateNumber">Plate Number</label>
-        <input type="text" id="plateNumber" name="plateNumber" placeholder="ABC-1234" required>
+        <input type="text" id="plateNumber" name="plateNumber" placeholder=" ex :- ABC-1234" required>
         <?php
         if (isset($message)) {
             foreach ($message as $message) {
@@ -250,13 +250,13 @@ if(isset($_POST['delete'])){
         ?>
 
         <label for="brand">Brand</label>
-        <input type="text" id="brand" name="brand" required >
+        <input type="text" id="brand" name="brand" placeholder=" ex :- Toyota" required >
 
         <label for="model">Model</label>
-        <input type="text" id="model" name="model" required>
+        <input type="text" id="model" name="model"  placeholder=" ex :- Allion"  required>
 
         <label for="fuelType">Fuel Type</label>
-        <input type="text" id="fuelType" name="fuelType" required>
+        <input type="text" id="fuelType" name="fuelType" placeholder=" ex :- Petrol , Diesel , Electric , Hybrid" required>
 
         <label for="manufacturedYear">Manufactured Year</label>
         <input type="text" id="manufacturedYear" name="manufacturedYear" required>
