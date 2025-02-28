@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
                 <div class="row g-3">
                     <div class="col-12">
                         <div class="form-group">
-                            <input type="submit" class="btn btn-light w-50 d-block mx-auto submit" name="submit" value="Register">
+                            <input type="submit" class="btn btn-secondary w-50 d-block mx-auto submit" name="submit" value="Register">
                         </div>
                     </div>
                 </div>

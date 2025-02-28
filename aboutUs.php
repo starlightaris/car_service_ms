@@ -4,9 +4,11 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) {
+      // Session is valid, proceed with the regular page processing
+      $user_email = $_SESSION['userId'];
     
-    
-     $user_email = $_SESSION['userId'];
+
      $sql1="SELECT customerId FROM customer WHERE email='$user_email'";
      $result1=mysqli_query($con,$sql1);
  
@@ -23,7 +25,8 @@
           $success_message[] = 'Thank you for your feedback!';
       }
 
-        }
+          }
+          }
 }
 
 ?>

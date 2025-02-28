@@ -113,6 +113,9 @@ if (isset($_POST['btnsubmit'])) {
                     </div>
                 </div>
             </div>
+            <div class="row" style="color:grey; text-align:right;">
+             <small ><a href="forgotpw.php" style="text-decoration:none;">Forgot Password?</a></small>
+            </div>
             <!-- <div class="row g-3">
                 <small id="passwordError" class="error-text">Password must have at least 8 characters, 1
                     uppercase, 1 lowercase, 1 number, and 1 special character.</small>
@@ -122,12 +125,12 @@ if (isset($_POST['btnsubmit'])) {
                 <div class="col-12">
                     <div class="form-group">
 
-                        <input type="submit" class="btn btn-light w-50  d-block mx-auto submit" name="btnsubmit" value="Login">
+                        <input type="submit" class="btn btn-secondary w-50  d-block mx-auto submit" name="btnsubmit" value="Login">
                     </div>
                 </div>
             </div>
-            <div class="row g-3" style="color:grey;">
-                <center>Don't have an account? <a href="register.php">Register</a></center>
+            <div class="row g-3" style="color:grey; ">
+                <center>Don't have an account? <a href="register.php" style="text-decoration:none">Register</a></center>
             </div>
         </form>
     </div>
