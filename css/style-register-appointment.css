@@ -1,23 +1,24 @@
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/login-back.jpg");
-    /* background-image: url("../images/login-back.jpg"); */
-    background-size: cover; 
-    background-position: center; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/login-back.jpg"); /* background-image: url("../images/login-back.jpg"); */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat; /* Prevents repetition */
     background-attachment: fixed;
-}  
+}
+
 /* .navbar{
     background-color: rgba(0, 0, 0, 0.2)!important;
 } */
 
-.row{
-    margin:10px;
+.row {
+    margin: 10px;
 }
 
 .form {
@@ -30,21 +31,24 @@ body {
     margin: 150px auto 50px;
 }
 
-.input-field, #txtboxes {
+.input-field,
+#txtboxes {
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 20px;
     font-size: 16px;
     transition: border-color 0.3s ease;
-    background:rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.input-field:focus, #txtboxes:focus {
+.input-field:focus,
+#txtboxes:focus {
     /*border-color: #007bff;*/
     color: black;
     outline: none;
-    background:rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
+
 .error-text {
     color: red;
     font-size: 14px;
@@ -52,11 +56,11 @@ body {
     margin-top: 2px;
 }
 
-.error-message{
-        color: red;
-        font-size: 14px;
-        margin-top: 2px;
-    
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+
 }
 
 .submit {
@@ -72,11 +76,11 @@ body {
         margin: 100px;
         padding: 20px;
     }
-    
+
     .top header {
         font-size: 1.5rem;
     }
-    
+
     .input-field {
         font-size: 14px;
     }
@@ -90,22 +94,47 @@ body {
     }
 }
 
-label{
+label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-label.form-check-label{
+label.form-check-label {
     font-weight: normal;
 }
 
 #confirmBtn {
     margin: auto;
-    align-items:center;
+    align-items: center;
 }
 
-select#timeSelect option:disabled {
-    color: gray;
-    font-style: italic;
+
+/* time slot selction button styling*/
+
+
+.timeSelect {
+    background-color: #7295bb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: calc(33.33% - 10px); /* 3 buttons per row with gap */
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+.timeSelect:hover {
+    background-color: #556d88;
+}
+
+.timeSelect.selected {
+    background-color: orange !important;
+}
+
+.timeSelect.disabled {
+    background-color: grey !important;
+    cursor: not-allowed;
+    pointer-events: none;
 }
