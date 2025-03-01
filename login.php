@@ -11,7 +11,7 @@ if (isset($_POST['btnsubmit'])) {
     $email = $_POST['txtemail'];
     $pass = $_POST['txtpass'];
 
-    $select = mysqli_query($con, "SELECT * FROM user WHERE username = '$email' AND password = '$pass' AND deleted_flag=FALSE AND application_id=1") or die('query failed');
+    $select = mysqli_query($con, "SELECT * FROM user WHERE username = '$email' AND password = '$pass' AND deleted_flag=FALSE") or die('query failed');
 
     if (mysqli_num_rows($select) > 0) {
         $row = mysqli_fetch_assoc($select);
