@@ -6,7 +6,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
  $user_email = $_SESSION['userId'];
 //$user_email="binithi.vihanga@gmail.com";
 if(isset($_POST['submit'])){

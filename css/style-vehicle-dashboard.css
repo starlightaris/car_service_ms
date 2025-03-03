@@ -1,0 +1,97 @@
+
+.container {   
+    margin-bottom: 50px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+}
+ .navbar{
+background-color: rgba(0, 0, 0, 0.3)!important;
+} 
+
+body {
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/login-back.jpg"); */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    /* font-family: Arial, sans-serif; */
+    background-color: white;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    }
+
+/* Sorters */
+th[data-sort] {
+    cursor: pointer;
+}
+
+th[data-sort] i {
+    margin-left: 5px;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+th[data-sort]:hover i {
+    color: #000;
+}
+
+th[data-sort].asc i,
+th[data-sort].desc i {
+    color: #007bff; /* Highlight the active sort icon */
+}
+
+/* Make table headers sticky */
+.table-responsive {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff; /* Add a background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+.table-responsive thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom CSS for Maintenance Status Cards */
+/* Car Animation */
+@keyframes moveCar {
+    0% { left: 0; }
+    100% { left: calc(50% - 10px); } /* Adjust based on progress bar width */
+}
+
+.progress {
+    position: relative;
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #555 50%, transparent 50%);
+    background-size: 20px 100%;
+    background-repeat: repeat-x;
+}
+
+.progress-bar {
+    background-color: #ffc107; /* Bootstrap's warning color */
+}
+
+.fa-car {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #000;
+    animation: moveCar 3s linear infinite;
+}
