@@ -76,9 +76,7 @@
                         <td>' . htmlspecialchars($row['date']) . '</td>
                         <td>' . htmlspecialchars($row['services']) . '</td>
                         <td>
-                        <a href="view_invoice.php?invoiceId=' . urlencode($row['customerInvoiceId']) . '" class="btn btn-primary btn-sm">
-                            View Invoice
-                        </a>
+                       
                     </td>
                       </tr>';
             }
