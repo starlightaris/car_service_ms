@@ -66,6 +66,31 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
             $maintenanceStatus[$row['plateNumber']] = $row['statuses'];
         }
     }
+
+    // Fetch reminders for the logged-in user
+    $sql_reminders = "SELECT r.reminderId, v.plateNumber, s.serviceName, r.mileage, r.reminderDate 
+                        FROM reminder r
+                        INNER JOIN vehicle v ON r.vehicleId = v.vehicleId
+                        INNER JOIN service s ON r.serviceId = s.serviceId
+                        WHERE r.customerId = '$customerId'
+                        ORDER BY r.reminderDate ASC";
+    $result_reminders = mysqli_query($con, $sql_reminders);
+
+    if ($result_reminders && mysqli_num_rows($result_reminders) > 0) {
+        $reminders = [];
+        while ($row = mysqli_fetch_assoc($result_reminders)) {
+            $reminders[] = $row;
+        }
+    } else {
+        $reminders = []; // Empty array if no reminders found
+    }
+
+    function getColorForPlateNumber($plateNumber)
+    {
+        // Simple hash function to generate a color
+        $hash = md5($plateNumber);
+        return '#' . substr($hash, 0, 6); // Use the first 6 characters of the hash as a hex color
+    }
 }
 
 ?>
@@ -84,7 +109,7 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style-header-footer.css">
-    <link rel="stylesheet" type="text/css" href="css/style-serviceHistory.css">
+    <link rel="stylesheet" type="text/css" href="css/style-vehicle-dashboard.css">
     <!-- Custom Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,51 +122,57 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
 </head>
 
 <body>
-    <div id="header" style="margin-bottom: 150px;"></div>
+    <div id="header">
     <?php include("header.php"); ?>
+    </div>
 
     <!-- Maintenance Status Section -->
-    <div class="container">
-        <h3>Maintenance Status</h3>
+    <div style="margin-top: 150px;" class="container">
+        <h3 style="color: #fff;">Maintenance Status</h3>
         <div class="row">
-            <?php if (!empty($maintenanceStatus)): ?>
-                <?php foreach ($maintenanceStatus as $plateNumber => $statuses): ?>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo htmlspecialchars($plateNumber); ?></h5>
-                                <p class="card-text">
-                                    <?php
-                                    $statusArray = explode(', ', $statuses);
-                                    foreach ($statusArray as $status) {
-                                        if ($status === 'Ongoing') {
-                                            echo '
-                                                <div class="progress mb-2" style="height: 30px; border-radius: 15px; overflow: hidden; position: relative;">
-                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    <i class="fas fa-car" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); font-size: 20px; color: #000; animation: moveCar 3s linear infinite;"></i>
-                                                </div>';
-                                        } else {
-                                            echo '<span class="badge bg-success me-1"><i class="fas fa-check-circle me-1"></i>' . htmlspecialchars($status) . '</span>';
-                                        }
-                                    }
-                                    ?>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div class="col">
-                    <p class="text-muted">No maintenances in progress.</p>
+        <?php if (!empty($maintenanceStatus)): ?>
+    <?php foreach ($maintenanceStatus as $plateNumber => $statuses): ?>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo htmlspecialchars($plateNumber); ?></h5>
+                    <p class="card-text">
+                        <?php
+                        $statusArray = explode(', ', $statuses);
+                        foreach ($statusArray as $status) {
+                            if ($status === 'Ongoing') {
+                                echo '
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <i class="fas fa-car"></i>
+                                    </div>';
+                            } elseif ($status === 'Completed') {
+                                echo '
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar completed" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>';
+                            } else {
+                                echo '<span class="badge bg-secondary me-1">' . htmlspecialchars($status) . '</span>';
+                            }
+                        }
+                        ?>
+                    </p>
                 </div>
-            <?php endif; ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <div class="col">
+        <p class="text-muted">No maintenances in progress.</p>
+    </div>
+<?php endif; ?>
         </div>
     </div>
 
 
     <!-- Active Appointments Section -->
     <div class="container">
-        <h3>Active Appointments</h3>
+        <h3 style="color: #fff;">Active Appointments</h3>
         <!-- Table -->
         <div class="table-responsive">
             <table class="table table-striped table-hover" id="activeAppointmentsTable">
@@ -199,8 +230,31 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
         </div>
     </div>
 
+    <!-- Reminders -->
     <div class="container">
-        <h3>Service History</h3>
+        <h3 style="color: #fff;">Reminders</h3>
+        <div class="timeline">
+            <?php if (!empty($reminders)): ?>
+                <?php foreach ($reminders as $reminder): ?>
+                    <?php
+                    $color = getColorForPlateNumber($reminder['plateNumber']);
+                    ?>
+                    <div class="timeline-item" style="border-left: 4px solid <?php echo $color; ?>;">
+                        <h5 style="color: <?php echo $color; ?>;"><?php echo htmlspecialchars($reminder['plateNumber']); ?></h5>
+                        <p><strong>Service:</strong> <?php echo htmlspecialchars($reminder['serviceName']); ?></p>
+                        <p><strong>Mileage:</strong> <?php echo htmlspecialchars($reminder['mileage']); ?></p>
+                        <p><strong>Reminder Date:</strong> <?php echo htmlspecialchars($reminder['reminderDate']); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-muted">No reminders set for any vehicle.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <!-- Service Histroy -->
+    <div class="container">
+        <h3 style="color: #fff;">Service History</h3>
         <!-- Table -->
         <div class="table-responsive">
             <table class="table table-striped table-hover" id="serviceHistoryTable">
@@ -215,7 +269,6 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
                         <th data-sort="services">
                             Service Type <i class="fas fa-sort"></i>
                         </th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="historyTable">
@@ -227,10 +280,6 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
                                 <td><?php echo htmlspecialchars($row['date']); ?></td>
                                 <td><?php echo htmlspecialchars($row['services']); ?></td>
                                 <td>
-                                    <a href="view_invoice.php?invoiceId=<?php echo urlencode($row['customerInvoiceId']); ?>"
-                                        class="btn btn-primary btn-sm">
-                                        View Invoice
-                                    </a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -245,7 +294,7 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
     </div>
 
     <!-- Footer -->
-    <div id="footer">
+    <div style="margin-top: 100px;" id="footer">
         <?php include("footer.php"); ?>
     </div>
 

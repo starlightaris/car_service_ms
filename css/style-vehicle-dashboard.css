@@ -14,7 +14,7 @@ background-color: rgba(0, 0, 0, 0.3)!important;
 } 
 
 body {
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/login-back.jpg"); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/login-back.jpg");
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -46,7 +46,7 @@ th[data-sort].desc i {
     color: #007bff; /* Highlight the active sort icon */
 }
 
-/* Make table headers sticky */
+/* Sticky Table Headers */
 .table-responsive {
     max-height: 400px;
     overflow-y: auto;
@@ -65,25 +65,55 @@ th[data-sort].desc i {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Custom CSS for Maintenance Status Cards */
-/* Car Animation */
-@keyframes moveCar {
-    0% { left: 0; }
-    100% { left: calc(50% - 10px); } /* Adjust based on progress bar width */
-}
-
+/* Maintenance Status Cards - Car progress bar */
+/* Progress Bar Container */
 .progress {
     position: relative;
     height: 30px;
     border-radius: 15px;
     overflow: hidden;
-    background-image: linear-gradient(to right, #555 50%, transparent 50%);
-    background-size: 20px 100%;
-    background-repeat: repeat-x;
+    background-image: linear-gradient(to right, #555 50%, transparent 50%); /* Pending track */
+    background-size: 20px 100%; /* Size of the stripes */
+    background-repeat: repeat-x; /* Repeat the stripes horizontally */
 }
 
+/* Progress Bar */
 .progress-bar {
-    background-color: #ffc107; /* Bootstrap's warning color */
+    background-color: #ffc107; /* Yellow for ongoing maintenance */
+    transition: width 0.5s ease; /* Smooth transition for progress */
+}
+
+/* Completed Progress Bar */
+.progress-bar.completed {
+    background-color: #28a745; /* Green for completed maintenance */
+    width: 100% !important; /* Full width for completed status */
+    position: relative;
+}
+
+/* Checkmark Icon for Completed Status */
+.progress-bar.completed::after {
+    content: '\f00c'; /* Font Awesome checkmark icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Car Animation */
+/* Car Animation for Ongoing Status */
+@keyframes moveCarOngoing {
+    0% { left: 0; }
+    100% { left: 50%; } /* Stop at the middle */
+}
+
+/* Car Animation for Completed Status */
+@keyframes moveCarCompleted {
+    0% { left: 0; }
+    100% { left: calc(100% - 20px); } /* Move to the end */
 }
 
 .fa-car {
@@ -93,5 +123,55 @@ th[data-sort].desc i {
     transform: translateY(-50%);
     font-size: 20px;
     color: #000;
-    animation: moveCar 3s linear infinite;
+    animation: moveCarOngoing 3s linear infinite; /* Default animation */
+}
+
+/* Completed Status - Move Car to the End */
+.progress-bar.completed .fa-car {
+    animation: moveCarCompleted 3s linear forwards; /* Move to the end and stop */
+}
+
+/* Reminder Timeline */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Hover Effect for Timeline Content */
+.timeline-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in Animation for Timeline Items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
 }
