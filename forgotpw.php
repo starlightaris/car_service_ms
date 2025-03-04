@@ -1,5 +1,4 @@
 <?php
-
      use PHPMailer\PHPMailer\PHPMailer;
      use PHPMailer\PHPMailer\Exception;
      require 'vendor/autoload.php'; // Include PHPMailer (if installed via Composer)
@@ -13,13 +12,7 @@ include('php/conf.php');
         $token = bin2hex(random_bytes(32));
         //$expiry = date("Y-m-d H:i:s", strtotime("+1 hour")); 
 
-
-       
-
-
-
     $mail = new PHPMailer(true);
-
 
     // SMTP settings
     $mail->isSMTP();
