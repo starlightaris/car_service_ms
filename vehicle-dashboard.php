@@ -227,10 +227,10 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
                                 <td><?php echo htmlspecialchars($row['date']); ?></td>
                                 <td><?php echo htmlspecialchars($row['services']); ?></td>
                                 <td>
-                                    <a href="view_invoice.php?invoiceId=<?php echo urlencode($row['customerInvoiceId']); ?>"
+                                    <!-- <a href="view_invoice.php?invoiceId=<?php echo urlencode($row['customerInvoiceId']); ?>"
                                         class="btn btn-primary btn-sm">
                                         View Invoice
-                                    </a>
+                                    </a> -->
                                 </td>
                             </tr>
                         <?php endwhile; ?>

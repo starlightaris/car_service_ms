@@ -84,7 +84,7 @@ $currentPage = basename($_SERVER['REQUEST_URI']);
                   </form>
 
                   <li><a class="dropdown-item" href="vehicle.php">Vehicle Details</a></li>
-                  <li><a class="dropdown-item" href="serviceHistory.php">Service History</a></li>
+                  <li><a class="dropdown-item" href="vehicle-dashboard.php">Vehicle Dashboard</a></li>
 
                   <li><a class="dropdown-item text-danger" href="javascript:void(0);" onclick="confirmDelete()">Delete
                       Profile</a></li>
