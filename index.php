@@ -1,6 +1,12 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['userId']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -190,14 +196,19 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section text-center py-5" style="background-color: #f8f9fa;">
+<!-- CTA -->
+<section class="cta-section text-center py-5" style="background-color: #f8f9fa;">
     <div class="container">
-      <h2>Ready to Get Started?</h2>
-      <p>Book an appointment today and experience top-notch car service.</p>
-      <a href="appointment.php" class="btn btn-primary btn-lg cta-button">Book Now</a>
+        <h2>Ready to Get Started?</h2>
+        <p>Book an appointment today and experience top-notch car service.</p>
+        <a href="<?php echo $isLoggedIn ? 'appointment.php' : 'login.php'; ?>" class="btn btn-primary btn-lg cta-button">
+            <?php echo $isLoggedIn ? 'Book Now' : 'Log In to Book Now'; ?>
+        </a>
+        <?php if (!$isLoggedIn): ?>
+            <p class="mt-2">Please log in to book an appointment.</p>
+        <?php endif; ?>
     </div>
-  </section>
+</section>
 
   <!-- Get in touch -->
   <section class="contact-info py-5" style="background-color: #343a40; color: #fff;">
@@ -254,5 +265,4 @@
   </div>
 
 </body>
-
 </html>
