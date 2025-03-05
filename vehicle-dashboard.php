@@ -171,7 +171,7 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
 
 
     <!-- Active Appointments Section -->
-    <div class="container">
+    <div class="container" style="margin-top:100px";>
         <h3 style="color: #fff;">Active Appointments</h3>
         <!-- Table -->
         <div class="table-responsive">
@@ -231,7 +231,7 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
     </div>
 
     <!-- Reminders -->
-    <div class="container">
+    <div class="container" style="margin-top:60px";>
         <h3 style="color: #fff;">Reminders</h3>
         <div class="timeline">
             <?php if (!empty($reminders)): ?>
@@ -253,7 +253,7 @@ if ($result1 && mysqli_num_rows($result1) > 0) {
     </div>
 
     <!-- Service Histroy -->
-    <div class="container">
+    <div class="container" style="margin-top:50px;">
         <h3 style="color: #fff;">Service History</h3>
         <!-- Table -->
         <div class="table-responsive">
